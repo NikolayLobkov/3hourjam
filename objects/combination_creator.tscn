@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cedotbanlwp23"]
+
+[ext_resource type="Script" uid="uid://b54al3fpec1ri" path="res://objects/combination_creator.gd" id="1_88wkh"]
+
+[node name="CombinationCreator" type="Node"]
+script = ExtResource("1_88wkh")

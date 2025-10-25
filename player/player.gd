@@ -39,8 +39,8 @@ func _physics_process(_delta: float) -> void:
 
 
 func _process(delta: float) -> void:
-	
 	look_velocity = look_velocity.lerp(look_relative, delta * CAMERA_SMOOTH)
+	
 	look_rotation.y += look_velocity.y
 	look_rotation.x = clampf(look_rotation.x + look_velocity.x, -PI / 2.0, PI / 2.0)
 	
