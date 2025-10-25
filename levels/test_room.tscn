@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckb3b8k2wrso6"]
+
+[ext_resource type="PackedScene" uid="uid://bkt51lajufn0b" path="res://levels/models/test_room.fbx" id="1_np6ep"]
+[ext_resource type="Environment" uid="uid://dgn7yadiyci1m" path="res://levels/environment_0.tres" id="2_wyybw"]
+[ext_resource type="PackedScene" uid="uid://lbyfu5tppd00" path="res://player/player.tscn" id="3_y5wqh"]
+[ext_resource type="Script" uid="uid://bkhvmkrwodyya" path="res://objects/ritual_area.gd" id="4_77pwf"]
+[ext_resource type="Texture2D" uid="uid://dxvv8weavsw3p" path="res://icon.svg" id="5_lktwm"]
+[ext_resource type="PackedScene" uid="uid://tr2gnn5ud7dr" path="res://global/trigger.tscn" id="6_bodbi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pnvjf"]
+size = Vector3(2, 3, 2)
+
+[node name="TestRoom" type="Node3D"]
+
+[node name="TestRoom" parent="." instance=ExtResource("1_np6ep")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TestRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9971597, 0)
+light_color = Color(1, 0.7276667, 0.57, 1)
+light_energy = 0.4
+light_size = 1.0
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.67
+shadow_blur = 1.8
+omni_range = 30.575329
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="TestRoom"]
+environment = ExtResource("2_wyybw")
+
+[node name="Player" parent="." instance=ExtResource("3_y5wqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.642568)
+
+[node name="RitualArea" type="Node3D" parent="."]
+script = ExtResource("4_77pwf")
+
+[node name="Decal" type="Decal" parent="RitualArea"]
+texture_albedo = ExtResource("5_lktwm")
+cull_mask = 1
+
+[node name="Trigger" parent="RitualArea" instance=ExtResource("6_bodbi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RitualArea/Trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_pnvjf")
+
+[connection signal="player_entered" from="RitualArea/Trigger" to="RitualArea" method="_on_trigger_player_entered"]

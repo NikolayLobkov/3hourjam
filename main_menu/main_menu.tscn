@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://06yuwt2lfnj0"]
+
+[ext_resource type="Script" uid="uid://b52u3yxs4qx6p" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="Script" uid="uid://w1r5ytkxyrfd" path="res://main_menu/menus/main.gd" id="2_d3a7t"]
+[ext_resource type="PackedScene" uid="uid://c3cqpnvbja3n0" path="res://global/scene_loader.tscn" id="3_3shxk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1h4yd"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_oa53l")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1h4yd")
+current_tab = 0
+clip_tabs = false
+tabs_visible = false
+
+[node name="Main" type="Control" parent="Control/TabContainer"]
+layout_mode = 2
+script = ExtResource("2_d3a7t")
+metadata/_tab_index = 0
+
+[node name="LevelLoader" parent="Control/TabContainer/Main" instance=ExtResource("3_3shxk")]
+scene_path = "res://levels/test_room.tscn"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -157.5
+offset_right = 113.0
+offset_bottom = 157.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Start" type="Button" parent="Control/TabContainer/Main/VBoxContainer"]
+layout_mode = 2
+text = "Приступить"
+
+[node name="Quit" type="Button" parent="Control/TabContainer/Main/VBoxContainer"]
+layout_mode = 2
+text = "Выйти"
+
+[connection signal="pressed" from="Control/TabContainer/Main/VBoxContainer/Start" to="Control/TabContainer/Main" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/TabContainer/Main/VBoxContainer/Quit" to="Control/TabContainer/Main" method="_on_quit_pressed"]
