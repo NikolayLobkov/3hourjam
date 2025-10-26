@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsdafmm8uboj3"]
+[gd_scene load_steps=11 format=3 uid="uid://dsdafmm8uboj3"]
 
 [ext_resource type="PackedScene" uid="uid://hwjqp78r3gpa" path="res://assets/levels/models/room_main.tscn" id="1_xlv32"]
 [ext_resource type="Environment" uid="uid://dgn7yadiyci1m" path="res://levels/environment_0.tres" id="2_bbvwo"]
 [ext_resource type="PackedScene" uid="uid://lbyfu5tppd00" path="res://characters/player/player.tscn" id="3_xlv32"]
-[ext_resource type="PackedScene" uid="uid://c5ybk5ymjk0y7" path="res://characters/demon_mag/demon_mag.tscn" id="4_uy0m8"]
-[ext_resource type="PackedScene" uid="uid://1uq0ie5vhgbq" path="res://characters/demon_monk/demon_monk.tscn" id="5_a21b0"]
-[ext_resource type="PackedScene" uid="uid://ceml4f8igihim" path="res://characters/demon_skeleton/demon_skeleton.tscn" id="6_r4vwp"]
+[ext_resource type="Script" uid="uid://bkhvmkrwodyya" path="res://objects/ritual_area.gd" id="4_dt74c"]
+[ext_resource type="PackedScene" uid="uid://cedotbanlwp23" path="res://objects/combination_creator.tscn" id="5_wn8mm"]
+[ext_resource type="PackedScene" uid="uid://blha2pgibs2lf" path="res://UI/qte_game.tscn" id="6_dsdcb"]
+[ext_resource type="PackedScene" uid="uid://b0dqmv5mn3a8u" path="res://objects/demon_summoner.tscn" id="7_c2lvv"]
+[ext_resource type="Texture2D" uid="uid://dxvv8weavsw3p" path="res://icon.svg" id="8_nehim"]
+[ext_resource type="PackedScene" uid="uid://tr2gnn5ud7dr" path="res://global/trigger.tscn" id="9_5c206"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dt74c"]
+radius = 5.3930664
 
 [node name="MainRoom" type="Node3D"]
 
@@ -27,13 +33,26 @@ omni_range = 4096.0
 environment = ExtResource("2_bbvwo")
 
 [node name="Player" parent="." instance=ExtResource("3_xlv32")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1106534e-07, 7.642568)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.506918, 9.1106534e-07, 19.446947)
 
-[node name="Demon" parent="." instance=ExtResource("4_uy0m8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.301348, 0, -5.4416203)
+[node name="RitualArea" type="Node3D" parent="."]
+script = ExtResource("4_dt74c")
 
-[node name="DemonMonk" parent="." instance=ExtResource("5_a21b0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.624565, 0, -7.379634)
+[node name="CombinationCreator" parent="RitualArea" instance=ExtResource("5_wn8mm")]
 
-[node name="DemonSkeleton" parent="." instance=ExtResource("6_r4vwp")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.347318, 0, 0)
+[node name="QTEGame" parent="RitualArea" instance=ExtResource("6_dsdcb")]
+
+[node name="DemonSummoner" parent="RitualArea" instance=ExtResource("7_c2lvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Decal" type="Decal" parent="RitualArea"]
+texture_albedo = ExtResource("8_nehim")
+cull_mask = 1
+
+[node name="Trigger" parent="RitualArea" instance=ExtResource("9_5c206")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RitualArea/Trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("CylinderShape3D_dt74c")
+
+[connection signal="player_entered" from="RitualArea/Trigger" to="RitualArea" method="_on_trigger_player_entered"]
