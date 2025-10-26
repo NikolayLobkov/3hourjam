@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5ybk5ymjk0y7"]
+
+[ext_resource type="Script" uid="uid://c43i3bxckgvoc" path="res://characters/demon/demon.gd" id="1_8g2g2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8g2g2"]
+radius = 0.74658203
+
+[sub_resource type="BoxMesh" id="BoxMesh_8g2g2"]
+
+[node name="Demon" type="CharacterBody3D"]
+script = ExtResource("1_8g2g2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_8g2g2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_8g2g2")

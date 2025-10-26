@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0dqmv5mn3a8u"]
+
+[ext_resource type="Script" uid="uid://lyosni5t5g6a" path="res://objects/demon_summoner.gd" id="1_87bmq"]
+
+[node name="DemonSummoner" type="Marker3D"]
+script = ExtResource("1_87bmq")

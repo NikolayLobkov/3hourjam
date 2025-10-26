@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://lbyfu5tppd00"]
+[gd_scene load_steps=6 format=3 uid="uid://lbyfu5tppd00"]
 
-[ext_resource type="Script" uid="uid://s8j5d28vx12a" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://s8j5d28vx12a" path="res://characters/player/player.gd" id="1_oul6g"]
+[ext_resource type="PackedScene" uid="uid://dhej5polbmf0b" path="res://UI/player_ui/player_ui.tscn" id="2_xxgcw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
@@ -31,3 +32,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7047167, -0.29352796)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.027825505)
 fov = 80.0
 near = 0.001
+
+[node name="PlayerUI" parent="." instance=ExtResource("2_xxgcw")]

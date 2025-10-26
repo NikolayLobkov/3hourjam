@@ -1,8 +1,8 @@
-class_name Player extends CharacterBody3D
+class_name Player extends Character
 
 
-const CAMERA_SENSITIVITY: float = 0.006
-const CAMERA_SMOOTH: float = 8.0
+const CAMERA_SENSITIVITY: float = 0.004
+const CAMERA_SMOOTH: float = 9.0
 
 @onready var camera_pivot: Node3D = $CameraPivot
 
