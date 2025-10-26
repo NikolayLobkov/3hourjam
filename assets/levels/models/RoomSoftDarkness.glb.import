@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://u4g66uwxf0ya"
-path="res://.godot/imported/Chalice.glb-01914a1efec6860e3111284adc3e2712.scn"
+uid="uid://bh3rdb37xulek"
+path="res://.godot/imported/RoomSoftDarkness.glb-00e9797ccf2c15dcfbc677534e0236a7.scn"
 
 [deps]
 
-source_file="res://assets/levels/models/props/Chalice.glb"
-dest_files=["res://.godot/imported/Chalice.glb-01914a1efec6860e3111284adc3e2712.scn"]
+source_file="res://assets/levels/models/RoomSoftDarkness.glb"
+dest_files=["res://.godot/imported/RoomSoftDarkness.glb-00e9797ccf2c15dcfbc677534e0236a7.scn"]
 
 [params]
 
@@ -39,15 +39,15 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
+"M_DarknessFull": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/levels/materials/M_DarknessFull.tres",
+"use_external/path": "uid://bsiv37gipapum"
+},
 "M_DarknessHalf": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://assets/levels/materials/M_DarknessHalf.tres",
 "use_external/path": "uid://v0ilk7lgcsh2"
-},
-"M_PropsAtlas": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://assets/levels/materials/M_PropsAtlas.tres",
-"use_external/path": "uid://b4tqoy4dofw5h"
 }
 }
 }

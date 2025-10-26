@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dsdafmm8uboj3"]
+[gd_scene load_steps=16 format=3 uid="uid://dsdafmm8uboj3"]
 
 [ext_resource type="PackedScene" uid="uid://hwjqp78r3gpa" path="res://assets/levels/models/room_main.tscn" id="1_xlv32"]
 [ext_resource type="Environment" uid="uid://dgn7yadiyci1m" path="res://levels/environment_0.tres" id="2_bbvwo"]
+[ext_resource type="PackedScene" uid="uid://bh3rdb37xulek" path="res://assets/levels/models/RoomSoftDarkness.glb" id="2_dsdcb"]
 [ext_resource type="PackedScene" uid="uid://lbyfu5tppd00" path="res://characters/player/player.tscn" id="3_xlv32"]
 [ext_resource type="Script" uid="uid://bkhvmkrwodyya" path="res://objects/ritual_area.gd" id="4_dt74c"]
 [ext_resource type="PackedScene" uid="uid://cedotbanlwp23" path="res://objects/combination_creator.tscn" id="5_wn8mm"]
@@ -35,6 +36,8 @@ func _on_ritual_action_maked(act: String) -> void:
 [node name="MainRoom" type="Node3D"]
 
 [node name="RoomMain" parent="." instance=ExtResource("1_xlv32")]
+
+[node name="RoomSoftDarkness" parent="RoomMain" instance=ExtResource("2_dsdcb")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="RoomMain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9971597, 0)
