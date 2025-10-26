@@ -5,12 +5,15 @@ extends Node3D
 @onready var demon_summoner: Marker3D = $DemonSummoner
 @onready var qte_game: CanvasLayer = $QTEGame
 @onready var player_position: Marker3D = $Trigger/PlayerPosition
+@onready var ritual: Node = $Ritual
+
 
 
 func _on_trigger_player_entered(player: Player) -> void:
 	player.input_enabled = false
 	combination_creator.create_combination()
 	qte_game.combination = combination_creator.combination
+	ritual.combination = combination_creator.combination
 	
 	var fade: Control = GameManager.player_ui.fade
 	
@@ -24,7 +27,8 @@ func _on_trigger_player_entered(player: Player) -> void:
 	await fade.faded_out
 	
 	
-	qte_game.start()
+	#qte_game.start()
+	ritual.start()
 
 
 func _ready() -> void:
