@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cdusfwsr2vfm2"
-path="res://.godot/imported/RoomMain.glb-953e01189638de9d43725c77ee65e5c3.scn"
+uid="uid://u4g66uwxf0ya"
+path="res://.godot/imported/Chalice.glb-01914a1efec6860e3111284adc3e2712.scn"
 
 [deps]
 
-source_file="res://assets/models/RoomMain.glb"
-dest_files=["res://.godot/imported/RoomMain.glb-953e01189638de9d43725c77ee65e5c3.scn"]
+source_file="res://assets/levels/models/props/Chalice.glb"
+dest_files=["res://.godot/imported/Chalice.glb-01914a1efec6860e3111284adc3e2712.scn"]
 
 [params]
 
@@ -37,6 +37,14 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"M_PropsAtlas": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/levels/materials/M_PropsAtlas.tres",
+"use_external/path": "uid://b4tqoy4dofw5h"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
