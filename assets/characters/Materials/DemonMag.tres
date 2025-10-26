@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ch6146qplbf28"]
+
+[ext_resource type="Texture2D" uid="uid://bx26p5dcv2tuw" path="res://assets/characters/DemonMag_DemonMag.png" id="1_i1u2c"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_i1u2c")
+texture_filter = 0
