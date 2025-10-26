@@ -2,6 +2,8 @@ extends Node
 
 
 signal action_maked(act: String)
+signal started(combination: String)
+signal ended
 
 @onready var action_rest_timer: Timer = $ActionRestTimer
 
@@ -10,11 +12,15 @@ var cur_action: String = ''
 
 
 func start() -> void:
+	started.emit(combination)
+	
 	for i: int in combination.length():
 		action(combination[i])
-		print(combination[i])
+		print('Common action: ', combination[i])
 		
 		await action_rest_timer.timeout
+	
+	ended.emit()
 
 
 
@@ -38,18 +44,3 @@ func action(act: String) -> void:
 			action_rest_timer.wait_time = 15
 	
 	action_rest_timer.start()
-
-
-
-
-
-
-#func _input(event: InputEvent) -> void:
-	#if event is InputEventAction and waiting_player_input:
-		#match event.action:
-			#'action_1': action_1()
-			#'action_2': action_2()
-			#'action_3': action_3()
-			#'action_4': action_4()
-			#'action_5': action_5()
-			#'action_6': action_6()

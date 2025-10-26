@@ -59,13 +59,15 @@ script = ExtResource("4_dt74c")
 
 [node name="CombinationCreator" parent="RitualArea" instance=ExtResource("5_wn8mm")]
 
-[node name="QTEGame" parent="RitualArea" instance=ExtResource("6_dsdcb")]
+[node name="QTEGame" parent="RitualArea" node_paths=PackedStringArray("player") instance=ExtResource("6_dsdcb")]
+player = NodePath("../../Player")
 
 [node name="Ritual" type="Node" parent="RitualArea"]
 script = ExtResource("7_wn8mm")
 
 [node name="ActionRestTimer" type="Timer" parent="RitualArea/Ritual"]
 process_callback = 0
+one_shot = true
 
 [node name="DemonSummoner" parent="RitualArea" instance=ExtResource("7_c2lvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -93,5 +95,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5687656, 0)
 billboard = 1
 script = SubResource("GDScript_wn8mm")
 
+[connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/QTEGame" method="_on_ritual_action_maked"]
 [connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/ActionLabel" method="_on_ritual_action_maked"]
+[connection signal="started" from="RitualArea/Ritual" to="RitualArea/QTEGame" method="_on_ritual_started"]
 [connection signal="player_entered" from="RitualArea/Trigger" to="RitualArea" method="_on_trigger_player_entered"]
