@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsdafmm8uboj3"]
+
+[ext_resource type="PackedScene" uid="uid://hwjqp78r3gpa" path="res://assets/levels/models/room_main.tscn" id="1_xlv32"]
+[ext_resource type="Environment" uid="uid://dgn7yadiyci1m" path="res://levels/environment_0.tres" id="2_bbvwo"]
+[ext_resource type="PackedScene" uid="uid://lbyfu5tppd00" path="res://characters/player/player.tscn" id="3_xlv32"]
+
+[node name="MoainRoom" type="Node3D"]
+
+[node name="RoomMain" parent="." instance=ExtResource("1_xlv32")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="RoomMain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9971597, 0)
+light_color = Color(1, 0.7276667, 0.57, 1)
+light_energy = 15.492
+light_size = 1.0
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.67
+shadow_blur = 1.8
+omni_range = 4096.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="RoomMain"]
+environment = ExtResource("2_bbvwo")
+
+[node name="Player" parent="." instance=ExtResource("3_xlv32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1106534e-07, 7.642568)

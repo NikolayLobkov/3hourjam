@@ -52,11 +52,13 @@ func _process(delta: float) -> void:
 	camera_pivot.rotation.x = look_rotation.x
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
+		
 		if input_enabled:
 			look_relative.y -= event.relative.x * CAMERA_SENSITIVITY
 			look_relative.x -= event.relative.y * CAMERA_SENSITIVITY
+			
 	
 	if event is InputEventKey:
 		if event.keycode == KEY_ESCAPE and event.is_pressed():

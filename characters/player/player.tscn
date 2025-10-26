@@ -32,6 +32,8 @@ func _physics_process(delta: float) -> void:
 
 [node name="Player" type="CharacterBody3D"]
 physics_interpolation_mode = 1
+wall_min_slide_angle = 0.43633232
+floor_stop_on_slope = false
 script = ExtResource("1_oul6g")
 
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
