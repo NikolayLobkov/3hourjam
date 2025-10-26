@@ -4,6 +4,8 @@ extends CanvasLayer
 signal combination_successed
 signal combination_failed
 
+signal action_maked(act: String)
+
 
 @export var player: Player
 @onready var main: Control = $Main
@@ -41,12 +43,24 @@ func _input(event: InputEvent) -> void:
 func action(act: String) -> void:
 	created_combination += act
 	waiting_player_input = false
+	action_maked.emit(act)
+	action_timeout_timer.stop()
 	
 	print('Your action: ', act)
-	
-	action_timeout_timer.stop()
 
 
 func _on_action_timeout_timeout() -> void:
 	created_combination += '0'
 	waiting_player_input = false
+
+
+func _on_ritual_ended() -> void:
+	waiting_player_input = false
+	
+	print('Your combination: ', created_combination)
+	print('Common combination: ', combination)
+	
+	if created_combination == combination:
+		combination_successed.emit()
+		return
+	combination_failed.emit()

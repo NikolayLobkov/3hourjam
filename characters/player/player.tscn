@@ -42,7 +42,6 @@ shape = SubResource("CapsuleShape3D_kqu6x")
 
 [node name="TestMesh" type="MeshInstance3D" parent="CollisionShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.31129992)
-visible = false
 mesh = SubResource("CapsuleMesh_kqu6x")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_oul6g")

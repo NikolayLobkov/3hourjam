@@ -190,15 +190,13 @@ grow_horizontal = 2
 
 [node name="Message" type="Label" parent="FailScreen/Box"]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "THE RITUAL HAS FAILED!"
+text = "The ritual has been failed!"
 horizontal_alignment = 1
 
 [node name="Action" type="Label" parent="FailScreen/Box"]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Press SPACE to try again"

@@ -70,7 +70,6 @@ process_callback = 0
 one_shot = true
 
 [node name="DemonSummoner" parent="RitualArea" instance=ExtResource("7_c2lvv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Decal" type="Decal" parent="RitualArea"]
 texture_albedo = ExtResource("8_nehim")
@@ -90,6 +89,12 @@ shape = SubResource("CylinderShape3D_dt74c")
 mesh = SubResource("CylinderMesh_dt74c")
 surface_material_override/0 = SubResource("StandardMaterial3D_wn8mm")
 
+[node name="Label" type="Label3D" parent="RitualArea/Trigger/DebugTriggerShape"]
+pixel_size = 0.0025
+billboard = 1
+text = "Встань сюда"
+font_size = 48
+
 [node name="ActionLabel" type="Label3D" parent="RitualArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5687656, 0)
 billboard = 1
@@ -97,5 +102,6 @@ script = SubResource("GDScript_wn8mm")
 
 [connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/QTEGame" method="_on_ritual_action_maked"]
 [connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/ActionLabel" method="_on_ritual_action_maked"]
+[connection signal="ended" from="RitualArea/Ritual" to="RitualArea/QTEGame" method="_on_ritual_ended"]
 [connection signal="started" from="RitualArea/Ritual" to="RitualArea/QTEGame" method="_on_ritual_started"]
 [connection signal="player_entered" from="RitualArea/Trigger" to="RitualArea" method="_on_trigger_player_entered"]
