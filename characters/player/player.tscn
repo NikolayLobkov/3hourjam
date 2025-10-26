@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://lbyfu5tppd00"]
+[gd_scene load_steps=7 format=3 uid="uid://lbyfu5tppd00"]
 
 [ext_resource type="Script" uid="uid://s8j5d28vx12a" path="res://characters/player/player.gd" id="1_oul6g"]
 [ext_resource type="PackedScene" uid="uid://dhej5polbmf0b" path="res://UI/player_ui/player_ui.tscn" id="2_xxgcw"]
@@ -10,6 +10,26 @@ radial_segments = 8
 rings = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oul6g"]
+
+[sub_resource type="GDScript" id="GDScript_xxgcw"]
+script/source = "extends Camera3D
+
+
+var initial_fov: float = 80.0
+var speed: float = 1.0
+var amplitude: float = 1.5
+
+var time: float = 0.0
+
+func _ready() -> void:
+	initial_fov = fov
+
+func _physics_process(delta: float) -> void:
+	time += delta
+	
+	fov = initial_fov + sin(time * speed) * amplitude
+	
+"
 
 [node name="Player" type="CharacterBody3D"]
 physics_interpolation_mode = 1
@@ -32,5 +52,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7047167, -0.29352796)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.027825505)
 fov = 80.0
 near = 0.001
+script = SubResource("GDScript_xxgcw")
 
 [node name="PlayerUI" parent="." instance=ExtResource("2_xxgcw")]

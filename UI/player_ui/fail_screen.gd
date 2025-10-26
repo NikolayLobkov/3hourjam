@@ -12,5 +12,5 @@ func _on_failed() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action('fail_restart') and GameManager.failed:
-		get_tree().reload_current_scene()
+	if event.is_action('fail_restart') and event.is_pressed() and GameManager.failed:
+		GameManager.restart.emit()

@@ -1,11 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://blha2pgibs2lf"]
+[gd_scene load_steps=3 format=3 uid="uid://blha2pgibs2lf"]
 
 [ext_resource type="Script" uid="uid://dmyxj62kcu2oe" path="res://UI/qte_game.gd" id="1_t0a1t"]
+[ext_resource type="PackedScene" uid="uid://bt0cex65wlu7q" path="res://UI/qte_action.tscn" id="2_pf8v2"]
 
 [node name="QTEGame" type="CanvasLayer"]
 script = ExtResource("1_t0a1t")
 
-[node name="Control" type="Control" parent="."]
+[node name="Main" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,3 +14,54 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="Pool" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 554.0
+offset_top = -184.0
+offset_right = 594.0
+offset_bottom = -144.0
+
+[node name="1" parent="Pool" instance=ExtResource("2_pf8v2")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="2" parent="Pool" instance=ExtResource("2_pf8v2")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="3" parent="Pool" instance=ExtResource("2_pf8v2")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="4" parent="Pool" instance=ExtResource("2_pf8v2")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="5" parent="Pool" instance=ExtResource("2_pf8v2")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="6" parent="Pool" instance=ExtResource("2_pf8v2")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
