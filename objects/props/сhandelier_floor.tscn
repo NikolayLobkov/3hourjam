@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b75plme3dod2o"]
-
-[ext_resource type="PackedScene" uid="uid://bkilx3paglxs7" path="res://assets/levels/models/props/СhandelierFloor.glb" id="1_sks6n"]
-
-[node name="СhandelierFloor" instance=ExtResource("1_sks6n")]

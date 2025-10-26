@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bkilx3paglxs7"
-path="res://.godot/imported/СhandelierFloor.glb-badc17dcef3e29be891deeb3f4f6ce55.scn"
+path="res://.godot/imported/ChandelierFloor.glb-16e0b1175a7541e1b1d5dd6657fd840f.scn"
 
 [deps]
 
-source_file="res://assets/levels/models/props/СhandelierFloor.glb"
-dest_files=["res://.godot/imported/СhandelierFloor.glb-badc17dcef3e29be891deeb3f4f6ce55.scn"]
+source_file="res://assets/levels/models/props/ChandelierFloor.glb"
+dest_files=["res://.godot/imported/ChandelierFloor.glb-16e0b1175a7541e1b1d5dd6657fd840f.scn"]
 
 [params]
 

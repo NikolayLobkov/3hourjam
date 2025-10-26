@@ -37,6 +37,14 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"M_PropsAtlas": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/levels/materials/M_PropsAtlas.tres",
+"use_external/path": "uid://b4tqoy4dofw5h"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

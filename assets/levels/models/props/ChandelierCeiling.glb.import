@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dmgp2bjc6uiep"
-path="res://.godot/imported/СhandelierCeiling.glb-a1c1b08dcf51828123c3cf1e1e287aa2.scn"
+path="res://.godot/imported/ChandelierCeiling.glb-86512008d924737e7bbf12cc532548d2.scn"
 
 [deps]
 
-source_file="res://assets/levels/models/props/СhandelierCeiling.glb"
-dest_files=["res://.godot/imported/СhandelierCeiling.glb-a1c1b08dcf51828123c3cf1e1e287aa2.scn"]
+source_file="res://assets/levels/models/props/ChandelierCeiling.glb"
+dest_files=["res://.godot/imported/ChandelierCeiling.glb-86512008d924737e7bbf12cc532548d2.scn"]
 
 [params]
 
