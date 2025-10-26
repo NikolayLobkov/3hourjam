@@ -9,6 +9,9 @@ signal restart_scene
 var failed: bool = false
 
 
+var player_ui: PlayerUI
+
+
 func _ready() -> void:
 	fail.connect(_on_failed)
 	restart.connect(_on_restart)

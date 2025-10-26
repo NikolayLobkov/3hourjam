@@ -1,4 +1,4 @@
-extends CanvasLayer
+class_name PlayerUI extends CanvasLayer
 
 
 @onready var fail_screen: Control = $FailScreen
@@ -7,6 +7,8 @@ extends CanvasLayer
 
 func _ready() -> void:
 	GameManager.restart.connect(_on_restart_request)
+	
+	GameManager.player_ui = self
 
 
 func _on_restart_request() -> void:

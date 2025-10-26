@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://tr2gnn5ud7dr" path="res://global/trigger.tscn" id="9_5c206"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dt74c"]
-radius = 5.3930664
+radius = 1.1337891
 
 [node name="MainRoom" type="Node3D"]
 
@@ -50,9 +50,13 @@ texture_albedo = ExtResource("8_nehim")
 cull_mask = 1
 
 [node name="Trigger" parent="RitualArea" instance=ExtResource("9_5c206")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+
+[node name="PlayerPosition" type="Marker3D" parent="RitualArea/Trigger"]
+transform = Transform3D(1, 0, 0, 0, 0.99050945, 0.13744454, 0, -0.13744454, 0.99050945, 0, -1, 0)
+gizmo_extents = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RitualArea/Trigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("CylinderShape3D_dt74c")
 
 [connection signal="player_entered" from="RitualArea/Trigger" to="RitualArea" method="_on_trigger_player_entered"]
