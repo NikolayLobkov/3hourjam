@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://dijp3wbt23t6d" path="res://global/trigger.gd" id="1_e8jgi"]
 
 [node name="Trigger" type="Area3D"]
+monitorable = false
 script = ExtResource("1_e8jgi")

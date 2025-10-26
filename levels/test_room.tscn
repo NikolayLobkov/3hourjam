@@ -33,12 +33,14 @@ omni_range = 30.575329
 environment = ExtResource("2_wyybw")
 
 [node name="Player" parent="." instance=ExtResource("3_y5wqh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.642568)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1106534e-07, 7.642568)
 
 [node name="RitualArea" type="Node3D" parent="."]
 script = ExtResource("4_77pwf")
 
 [node name="CombinationCreator" parent="RitualArea" instance=ExtResource("7_wyybw")]
+
+[node name="QTEGame" parent="RitualArea" instance=ExtResource("8_y5wqh")]
 
 [node name="DemonSummoner" parent="RitualArea" instance=ExtResource("9_77pwf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -52,7 +54,5 @@ cull_mask = 1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RitualArea/Trigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_pnvjf")
-
-[node name="QTEGame" parent="RitualArea" instance=ExtResource("8_y5wqh")]
 
 [connection signal="player_entered" from="RitualArea/Trigger" to="RitualArea" method="_on_trigger_player_entered"]

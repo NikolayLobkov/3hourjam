@@ -21,14 +21,13 @@ var amplitude: float = 1.5
 
 var time: float = 0.0
 
+
 func _ready() -> void:
 	initial_fov = fov
 
 func _physics_process(delta: float) -> void:
 	time += delta
-	
 	fov = initial_fov + sin(time * speed) * amplitude
-	
 "
 
 [node name="Player" type="CharacterBody3D"]

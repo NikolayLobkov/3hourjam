@@ -6,7 +6,6 @@ class_name CombinationCreator extends Node
 var combination: String = ''
 
 func create_combination() -> void:
-	randomize()
 	var recent: String = symbols
 	
 	var r: String = ''

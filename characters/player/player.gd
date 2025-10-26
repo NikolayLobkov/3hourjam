@@ -2,7 +2,7 @@ class_name Player extends Character
 
 
 const CAMERA_SENSITIVITY: float = 0.004
-const CAMERA_SMOOTH: float = 9.0
+const CAMERA_SMOOTH: float = 15.0
 
 @onready var camera_pivot: Node3D = $CameraPivot
 
@@ -18,6 +18,8 @@ var look_rotation: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	GameManager.failed = false
 
 
 func _physics_process(_delta: float) -> void:
@@ -58,5 +60,5 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event is InputEventKey:
 		if event.keycode == KEY_ESCAPE and event.is_pressed():
-			get_tree().quit()
+			get_tree().change_scene_to_file('res://main_menu/main_menu.tscn')
 	
