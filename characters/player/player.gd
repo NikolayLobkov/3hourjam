@@ -2,9 +2,10 @@ class_name Player extends Character
 
 
 const CAMERA_SENSITIVITY: float = 0.004
-const CAMERA_SMOOTH: float = 15.0
+const CAMERA_SMOOTH: float = 25.0
 
 @onready var camera_pivot: Node3D = $CameraPivot
+@onready var animation_player: AnimationPlayer
 
 var cur_speed: float = 4.0
 
@@ -63,4 +64,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.keycode == KEY_ESCAPE and event.is_pressed():
 			get_tree().change_scene_to_file('res://main_menu/main_menu.tscn')
-	
+
+
+func play_animation(anim_name: StringName) -> void:
+	animation_player.play(anim_name)

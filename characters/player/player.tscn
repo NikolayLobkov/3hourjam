@@ -53,6 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7047167, -0.29352796)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.027825505)
 fov = 80.0
 near = 0.001
+far = 50.0
 script = SubResource("GDScript_xxgcw")
 
 [node name="PlayerUI" parent="." instance=ExtResource("2_xxgcw")]

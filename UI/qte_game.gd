@@ -25,7 +25,6 @@ func _on_ritual_started(_combination: String) -> void:
 
 func _on_ritual_action_maked(_act: String) -> void:
 	waiting_player_input = true
-	print(waiting_player_input)
 	action_timeout_timer.start()
 
 
@@ -45,6 +44,8 @@ func action(act: String) -> void:
 	waiting_player_input = false
 	action_maked.emit(act)
 	action_timeout_timer.stop()
+	
+	player.play_animation(act)
 	
 	print('Your action: ', act)
 
