@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5ybk5ymjk0y7"]
+
+[ext_resource type="Script" uid="uid://c43i3bxckgvoc" path="res://characters/demon.gd" id="1_8g2g2"]
+[ext_resource type="PackedScene" uid="uid://slytln811vf2" path="res://assets/characters/DemonMag.glb" id="2_e7cma"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e7cma"]
+size = Vector3(4.535, 9, 2.349)
+
+[node name="DemonMag" type="CharacterBody3D"]
+script = ExtResource("1_8g2g2")
+
+[node name="DemonMag" parent="." instance=ExtResource("2_e7cma")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -0.19321322)
+shape = SubResource("BoxShape3D_e7cma")
+
+[editable path="DemonMag"]

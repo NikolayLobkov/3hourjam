@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbpnv5nyhewgk"]
+
+[ext_resource type="PackedScene" uid="uid://3mqxnvyrsxu2" path="res://assets/levels/models/props/MonolithBig.glb" id="1_v4bso"]
+
+[node name="MonolithBig" instance=ExtResource("1_v4bso")]

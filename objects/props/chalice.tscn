@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://thgbjmlcutvd"]
+
+[ext_resource type="PackedScene" uid="uid://u4g66uwxf0ya" path="res://assets/levels/models/props/Chalice.glb" id="1_parnn"]
+
+[node name="Chalice" instance=ExtResource("1_parnn")]

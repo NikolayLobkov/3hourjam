@@ -32,4 +32,4 @@ var fullscreen: bool = false
 func _input(event: InputEvent) -> void:
 	if event.is_action('fullscreen') and event.is_pressed():
 		fullscreen = not fullscreen
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED)

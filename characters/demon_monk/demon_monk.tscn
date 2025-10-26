@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://1uq0ie5vhgbq"]
+
+[ext_resource type="Script" uid="uid://c43i3bxckgvoc" path="res://characters/demon.gd" id="1_e4m7j"]
+[ext_resource type="PackedScene" uid="uid://ymkko5iedfb5" path="res://assets/characters/DemonMonk.glb" id="2_knkma"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4m7j"]
+size = Vector3(2, 4, 1)
+
+[node name="DemonMonk" type="CharacterBody3D"]
+script = ExtResource("1_e4m7j")
+metadata/_custom_type_script = "uid://dk8avrrcxjdnw"
+
+[node name="DemonMonk" parent="." instance=ExtResource("2_knkma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.143, 0)
+
+[node name="AnimationPlayer" parent="DemonMonk" index="1"]
+autoplay = "CylinderAction"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_e4m7j")
+
+[editable path="DemonMonk"]

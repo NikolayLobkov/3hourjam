@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqqcqhkud57c0"]
+
+[ext_resource type="PackedScene" uid="uid://bt6q78nf5kamy" path="res://assets/levels/models/props/Knife.glb" id="1_qkj3y"]
+
+[node name="Knife" instance=ExtResource("1_qkj3y")]

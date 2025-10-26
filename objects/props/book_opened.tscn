@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://djvyf8ce51rjc"]
+
+[ext_resource type="PackedScene" uid="uid://kfcs6hgd2ivy" path="res://assets/levels/models/props/BookOpened.glb" id="1_ewnaa"]
+
+[node name="BookOpened" instance=ExtResource("1_ewnaa")]
