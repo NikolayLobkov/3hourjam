@@ -1,5 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://thgbjmlcutvd"]
+[gd_scene load_steps=3 format=3 uid="uid://thgbjmlcutvd"]
 
 [ext_resource type="PackedScene" uid="uid://u4g66uwxf0ya" path="res://assets/levels/models/props/Chalice.glb" id="1_parnn"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_parnn"]
+height = 1.0952148
+radius = 0.6064453
+
 [node name="Chalice" instance=ExtResource("1_parnn")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5476074, 0)
+shape = SubResource("CylinderShape3D_parnn")

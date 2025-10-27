@@ -3,3 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://dkge1pxw7832g" path="res://assets/levels/models/props/Candles1.glb" id="1_kmkji"]
 
 [node name="Candles1" instance=ExtResource("1_kmkji")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69922423, 0)
+light_color = Color(1, 0.7276667, 0.57, 1)
+light_energy = 15.492
+light_size = 1.0
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+shadow_opacity = 0.67
+shadow_blur = 1.8
+omni_range = 25.0

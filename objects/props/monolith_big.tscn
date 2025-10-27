@@ -1,5 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbpnv5nyhewgk"]
+[gd_scene load_steps=3 format=3 uid="uid://cbpnv5nyhewgk"]
 
 [ext_resource type="PackedScene" uid="uid://3mqxnvyrsxu2" path="res://assets/levels/models/props/MonolithBig.glb" id="1_v4bso"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v4bso"]
+size = Vector3(1.1328125, 10.289551, 5.213867)
+
 [node name="MonolithBig" instance=ExtResource("1_v4bso")]
+
+[node name="MonolithBig" parent="." index="0"]
+transform = Transform3D(1.3095129, 0, 0, 0, 1.3095129, 0, 0, 0, 1.3095129, 0, -0.11170924, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014413834, 5.1442904, 0)
+shape = SubResource("BoxShape3D_v4bso")
