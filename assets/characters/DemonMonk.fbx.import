@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "DemonMonk": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/characters/materials/DemonMonk.tres",
+"use_external/fallback_path": "res://assets/characters/Materials/DemonMonk.tres",
 "use_external/path": "uid://ckxa6jvpb2lk"
 }
 }

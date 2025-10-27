@@ -19,7 +19,7 @@ var look_rotation: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
+	$Sectarian/Armature/Skeleton3D/CameraBone2/Knife.visible = true
 	GameManager.failed = false
 
 
@@ -85,10 +85,13 @@ func play_animation(anim_name: StringName) -> void:
 	animation_player.play(anim_name)
 
 func action(act: String) -> void:
+	$Sectarian/Armature/Skeleton3D/CameraBone2/Knife.visible = false
 	match act:
 		'1': play_animation('Clamp')
 		'2': play_animation('FoldArms')
 		'3': play_animation('RaiseHands')
-		'4': play_animation('Sacrifice')
+		'4': 
+			$Sectarian/Armature/Skeleton3D/CameraBone2/Knife.visible = true
+			play_animation('Sacrifice')
 		'5': play_animation('Bow')
 		'6': play_animation('ChoralSinging')

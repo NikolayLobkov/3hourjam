@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bm0osighjmunu"]
 
-[ext_resource type="Texture2D" uid="uid://b1q7tt5h4is63" path="res://assets/characters/DemonSkelet_DemonSkelet.png" id="1_g3xna"]
+[ext_resource type="Texture2D" uid="uid://cjhkaxvfxeuxh" path="res://assets/characters/Sectarian_Sectarian.png" id="1_g3xna"]
 
 [resource]
 shading_mode = 0

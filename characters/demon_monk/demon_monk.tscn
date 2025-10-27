@@ -7,6 +7,7 @@
 size = Vector3(2, 4, 1)
 
 [node name="DemonMonk" type="CharacterBody3D" node_paths=PackedStringArray("animation_player")]
+transform = Transform3D(0.635, 0, 0, 0, 0.635, 0, 0, 0, 0.635, 0, 0, 0)
 script = ExtResource("1_e4m7j")
 animation_player = NodePath("Model/AnimationPlayer")
 good_ending_anim_name = &"Armature|Good_End_001"
