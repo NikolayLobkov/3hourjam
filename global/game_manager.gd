@@ -30,7 +30,7 @@ func _on_restart_scene() -> void:
 
 
 
-var fullscreen: bool = false
+var fullscreen: bool = true
 
 func _input(event: InputEvent) -> void:
 	if event.is_action('fullscreen') and event.is_pressed():

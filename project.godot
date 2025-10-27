@@ -25,6 +25,7 @@ GameManager="*res://global/game_manager.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [input]
