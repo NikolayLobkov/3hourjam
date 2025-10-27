@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dsdafmm8uboj3"]
+[gd_scene load_steps=27 format=3 uid="uid://dsdafmm8uboj3"]
 
 [ext_resource type="PackedScene" uid="uid://hwjqp78r3gpa" path="res://assets/levels/models/room_main.tscn" id="1_xlv32"]
 [ext_resource type="Environment" uid="uid://dgn7yadiyci1m" path="res://levels/environment_0.tres" id="2_bbvwo"]
@@ -10,15 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://b0dqmv5mn3a8u" path="res://objects/demon_summoner.tscn" id="7_c2lvv"]
 [ext_resource type="Script" uid="uid://bp6w7frh5jdyk" path="res://objects/ritual.gd" id="7_wn8mm"]
 [ext_resource type="PackedScene" uid="uid://tr2gnn5ud7dr" path="res://global/trigger.tscn" id="9_5c206"]
-[ext_resource type="Texture2D" uid="uid://batff645ldr72" path="res://assets/levels/textures/T_Pentagram.png" id="10_wn8mm"]
 [ext_resource type="PackedScene" uid="uid://cbpnv5nyhewgk" path="res://objects/props/monolith_big.tscn" id="12_m0lr2"]
 [ext_resource type="PackedScene" uid="uid://coa4iy4bj0e7w" path="res://objects/props/tombstone.tscn" id="13_mqd01"]
 [ext_resource type="PackedScene" uid="uid://dcg01n3ptg7j3" path="res://characters/sectarian/Sectarian.tscn" id="13_mwfpk"]
 [ext_resource type="PackedScene" uid="uid://bojjurpos15hr" path="res://objects/props/candles_1.tscn" id="14_i0ixq"]
 [ext_resource type="Script" uid="uid://biwywciupq37h" path="res://objects/sectarians.gd" id="14_mwfpk"]
 [ext_resource type="PackedScene" uid="uid://b75plme3dod2o" path="res://objects/props/chandelier_floor.tscn" id="17_apy0m"]
+[ext_resource type="PackedScene" uid="uid://ctpecr3l5jl6o" path="res://objects/props/tombstones_row.tscn" id="18_f07vl"]
 [ext_resource type="PackedScene" uid="uid://c5gby5giqb6oo" path="res://objects/props/candle_1.tscn" id="18_m0lr2"]
+[ext_resource type="PackedScene" uid="uid://dpiyc15rkawy5" path="res://objects/props/candles_no_light.tscn" id="18_m2tq3"]
 [ext_resource type="PackedScene" uid="uid://thgbjmlcutvd" path="res://objects/props/chalice.tscn" id="19_mqd01"]
+[ext_resource type="PackedScene" uid="uid://baqei342ipmx3" path="res://objects/props/candle_no_light.tscn" id="19_qf884"]
+[ext_resource type="PackedScene" uid="uid://ckd7xdfsjy1ki" path="res://assets/levels/models/Pentagram.glb" id="21_m2tq3"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dt74c"]
 radius = 1.1
@@ -50,7 +53,7 @@ func _on_ritual_ended() -> void:
 [node name="RoomMain" parent="." instance=ExtResource("1_xlv32")]
 
 [node name="RoomSoftDarkness" parent="RoomMain" instance=ExtResource("2_dsdcb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0075473785, 0.021327972, -0.0016186237)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0039691925, 0.021327019, -0.028426409)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="RoomMain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9971597, 0)
@@ -115,16 +118,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5687656, 0)
 billboard = 1
 script = SubResource("GDScript_wn8mm")
 
-[node name="Pentagram" type="Sprite3D" parent="RitualArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
-pixel_size = 0.0314
-axis = 1
-transparent = false
-shaded = true
-double_sided = false
-texture_filter = 0
-texture = ExtResource("10_wn8mm")
-
 [node name="Props" type="Node3D" parent="."]
 
 [node name="MonolithBig" parent="Props" instance=ExtResource("12_m0lr2")]
@@ -143,28 +136,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6890948, 2.3841858e-07, 1.6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3713182, 0, -2.0251856)
 
 [node name="СhandelierFloor" parent="Props" instance=ExtResource("17_apy0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.054528, 2.2028394, 2.4454336)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.578, 2, 4.095)
 
 [node name="СhandelierFloor2" parent="Props" instance=ExtResource("17_apy0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.799156, 2.202839, -2.2597113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5294485, 2, -4.050331)
 
 [node name="СhandelierFloor3" parent="Props" instance=ExtResource("17_apy0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.693832, 2.0028396, 6.135972)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.223047, 2.0028396, 5.0070906)
 
 [node name="СhandelierFloor4" parent="Props" instance=ExtResource("17_apy0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.218697, 2.002839, -6.6715937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.34057, 2.0028389, -4.1528835)
 
 [node name="СhandelierFloor5" parent="Props" instance=ExtResource("17_apy0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.297505, 2.0028396, -12.36598)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.569656, 2.0028396, -10.87128)
 
 [node name="СhandelierFloor6" parent="Props" instance=ExtResource("17_apy0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.477261, 2.002839, 12.444438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.656411, 2.002839, 10.924914)
 
 [node name="СhandelierFloor7" parent="Props" instance=ExtResource("17_apy0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5139747, 0.0028392076, -13.416666)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5139747, 0.0028392076, -11.055027)
 
 [node name="СhandelierFloor8" parent="Props" instance=ExtResource("17_apy0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4702501, 0.0028389692, 13.532185)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4702501, 0.0028389692, 10.703416)
+
+[node name="СhandelierFloor11" parent="Props" instance=ExtResource("17_apy0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.672884, 0.0028392076, -12.3664255)
+
+[node name="СhandelierFloor12" parent="Props" instance=ExtResource("17_apy0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7166085, 0.0028389692, 12.323989)
 
 [node name="Candle1" parent="Props" instance=ExtResource("18_m0lr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9660845, -2.3841858e-07, 1.4118361)
@@ -177,6 +176,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2556162, 0, -0.3766644)
 
 [node name="Chalice" parent="Props" instance=ExtResource("19_mqd01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.950149, 2.2, 0.25534105)
+
+[node name="СhandelierFloor9" parent="Props" instance=ExtResource("17_apy0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5654984, 0.0028396845, 2.4744802)
+
+[node name="СhandelierFloor10" parent="Props" instance=ExtResource("17_apy0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3908124, 0.0028392076, -2.2915313)
+
+[node name="Tombstones" type="Node3D" parent="Props"]
+
+[node name="TombstonesRow1" parent="Props/Tombstones" instance=ExtResource("18_f07vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 6)
+
+[node name="TombstonesRow2" parent="Props/Tombstones" instance=ExtResource("18_f07vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -6)
+
+[node name="TombstonesRow3" parent="Props/Tombstones" instance=ExtResource("18_f07vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 6)
+
+[node name="TombstonesRow4" parent="Props/Tombstones" instance=ExtResource("18_f07vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -6)
+
+[node name="TombstonesRow5" parent="Props/Tombstones" instance=ExtResource("18_f07vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 6)
+
+[node name="TombstonesRow6" parent="Props/Tombstones" instance=ExtResource("18_f07vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -6)
+
+[node name="TombstonesRow7" parent="Props/Tombstones" instance=ExtResource("18_f07vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 6)
+
+[node name="TombstonesRow8" parent="Props/Tombstones" instance=ExtResource("18_f07vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -6)
+
+[node name="TombstonesRow9" parent="Props/Tombstones" instance=ExtResource("18_f07vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 6)
+
+[node name="TombstonesRow10" parent="Props/Tombstones" instance=ExtResource("18_f07vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, -6)
+
+[node name="Candles3" parent="Props" instance=ExtResource("18_m2tq3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6741056, 2.2000003, 1.0478706)
+
+[node name="Candles4" parent="Props" instance=ExtResource("18_m2tq3")]
+transform = Transform3D(0.2105571, 0, 0.97758156, 0, 1, 0, -0.97758156, 0, 0.2105571, -6.6741056, 2.2000003, -0.8856671)
+
+[node name="Candle4" parent="Props" instance=ExtResource("19_qf884")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9960394, 2.2, 1.8159952)
+
+[node name="Candle5" parent="Props" instance=ExtResource("19_qf884")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5619154, 2.2, 2.54055)
+
+[node name="Candle6" parent="Props" instance=ExtResource("19_qf884")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.415737, 2.2, 3.1596882)
+
+[node name="Candle7" parent="Props" instance=ExtResource("19_qf884")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9142885, 2.2, -1.7520022)
+
+[node name="Candle8" parent="Props" instance=ExtResource("19_qf884")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3427105, 2.2000005, -2.458389)
+
+[node name="Candle9" parent="Props" instance=ExtResource("19_qf884")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.116741, 2.1999998, -3.040957)
 
 [node name="Sectarians" type="Node3D" parent="."]
 script = ExtResource("14_mwfpk")
@@ -213,6 +274,9 @@ transform = Transform3D(0.49860895, 0, 0.8668272, 0, 1, 0, -0.8668272, 0, 0.4986
 
 [node name="Sectarian11" parent="Sectarians" instance=ExtResource("13_mwfpk")]
 transform = Transform3D(0.92921656, 0, 0.36953586, 0, 1, 0, -0.36953586, 0, 0.92921656, -1.7181884, 2.3841858e-07, -3.2165768)
+
+[node name="Pentagram2" parent="." instance=ExtResource("21_m2tq3")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.011, 0)
 
 [connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/QTEGame" method="_on_ritual_action_maked"]
 [connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/ActionLabel" method="_on_ritual_action_maked"]
