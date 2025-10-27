@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0asjvlw468o5"
-path.s3tc="res://.godot/imported/DemonMonk_DemonMonk.png-9b259ba3cdd9ffff1df69a945db94333.s3tc.ctex"
+uid="uid://cjhkaxvfxeuxh"
+path.s3tc="res://.godot/imported/Sectarian_Sectarian.png-552aa0afcd275123c5222418f187924b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cc20ecf958eded7f6ad1c9f774ddf844"
+"md5": "3520b8b39d8e99d2f033cc087d63a71f"
 }
 
 [deps]
 
-source_file="res://assets/characters/DemonMonk_DemonMonk.png"
-dest_files=["res://.godot/imported/DemonMonk_DemonMonk.png-9b259ba3cdd9ffff1df69a945db94333.s3tc.ctex"]
+source_file="res://assets/characters/Sectarian_Sectarian.png"
+dest_files=["res://.godot/imported/Sectarian_Sectarian.png-552aa0afcd275123c5222418f187924b.s3tc.ctex"]
 
 [params]
 
