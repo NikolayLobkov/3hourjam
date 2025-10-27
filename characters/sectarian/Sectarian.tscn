@@ -13,13 +13,11 @@ metadata/_custom_type_script = "uid://dk8avrrcxjdnw"
 
 [node name="Skeleton3D" parent="Sectarian/Armature" index="0"]
 bones/3/rotation = Quaternion(2.2821007e-07, 2.3384179e-07, 0.86674434, -0.49875274)
-bones/4/rotation = Quaternion(0.22039914, -0.11621253, -0.35627478, 0.9005482)
-bones/5/rotation = Quaternion(0.5713171, 0.030165501, -0.6379468, 0.5154714)
-bones/6/rotation = Quaternion(0.43867064, -0.07112476, -0.036392663, 0.8950894)
+bones/5/rotation = Quaternion(-8.603744e-09, 1.3360869e-08, -0.0011116189, 0.9999994)
+bones/6/rotation = Quaternion(0.012781748, -4.3686008e-08, -0.028756278, 0.99950475)
 bones/7/rotation = Quaternion(-2.2821007e-07, 2.3384179e-07, 0.86674434, 0.49875274)
-bones/8/rotation = Quaternion(0.22039914, 0.11621253, 0.35627478, 0.9005482)
-bones/9/rotation = Quaternion(0.571317, -0.030165592, 0.63794684, 0.51547134)
-bones/10/rotation = Quaternion(0.43867067, 0.07112476, 0.03639266, 0.8950893)
+bones/9/rotation = Quaternion(-8.603744e-09, -1.3360869e-08, 0.0011116189, 0.9999994)
+bones/10/rotation = Quaternion(0.012781748, 4.3686008e-08, 0.028756278, 0.99950475)
 
 [node name="AnimationPlayer" parent="Sectarian" index="1"]
 autoplay = "Idle"

@@ -6,13 +6,25 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_e7cma"]
 size = Vector3(4.535, 9, 2.349)
 
-[node name="DemonMag" type="CharacterBody3D"]
+[node name="DemonMag" type="CharacterBody3D" node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_8g2g2")
+animation_player = NodePath("Model/AnimationPlayer")
 
-[node name="DemonMag" parent="." instance=ExtResource("2_e7cma")]
+[node name="Model" parent="." instance=ExtResource("2_e7cma")]
+
+[node name="Skeleton3D" parent="Model/Armature" index="0"]
+bones/2/rotation = Quaternion(0.43701333, 1.0722339e-07, 5.2096055e-08, 0.899455)
+bones/4/rotation = Quaternion(-0.080634035, -0.28905344, -0.6528803, 0.6954808)
+bones/5/rotation = Quaternion(0.226377, 0.43940997, -0.42112088, 0.76047987)
+bones/6/rotation = Quaternion(0.0013810935, 1.2275231e-07, 0.23336816, 0.9723875)
+bones/7/rotation = Quaternion(-0.0013192428, 5.8431646e-09, -0.22292525, 0.9748347)
+bones/9/rotation = Quaternion(-0.08063399, 0.28905347, 0.6528803, 0.6954808)
+bones/10/rotation = Quaternion(0.22585127, -0.42124742, 0.43371046, 0.76383054)
+bones/11/rotation = Quaternion(0.001381099, -1.17743156e-07, -0.23336819, 0.9723875)
+bones/12/rotation = Quaternion(-0.0013192496, -1.6492209e-09, 0.22292522, 0.9748347)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -0.19321322)
 shape = SubResource("BoxShape3D_e7cma")
 
-[editable path="DemonMag"]
+[editable path="Model"]

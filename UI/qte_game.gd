@@ -22,7 +22,6 @@ var waiting_player_input: bool = false
 func _on_ritual_started(_combination: String) -> void:
 	combination = _combination
 	created_combination = ''
-	player.play_animation('Idle')
 
 func _on_ritual_action_maked(_act: String) -> void:
 	waiting_player_input = true
@@ -61,6 +60,8 @@ func _on_ritual_ended() -> void:
 	
 	print('Your combination: ', created_combination)
 	print('Common combination: ', combination)
+	
+	player.play_animation('Idle')
 	
 	if created_combination == combination:
 		combination_successed.emit()

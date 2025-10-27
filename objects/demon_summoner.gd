@@ -1,7 +1,7 @@
 extends Marker3D
 
 
-signal summoned(character: Character)
+signal summoned(demon: Demon)
 
 
 const DEMON_MAG: PackedScene = preload('res://characters/demon_mag/demon_mag.tscn')

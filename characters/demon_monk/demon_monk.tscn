@@ -6,21 +6,28 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_e4m7j"]
 size = Vector3(2, 4, 1)
 
-[node name="DemonMonk" type="CharacterBody3D"]
+[node name="DemonMonk" type="CharacterBody3D" node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_e4m7j")
+animation_player = NodePath("Model/AnimationPlayer")
+good_ending_anim_name = &"Armature|Good_End_001"
+bad_ending_anim_name = &"Armature|Bad_End"
 metadata/_custom_type_script = "uid://dk8avrrcxjdnw"
 
-[node name="DemonMonk" parent="." instance=ExtResource("2_knkma")]
+[node name="Model" parent="." instance=ExtResource("2_knkma")]
 
-[node name="Skeleton3D" parent="DemonMonk/Armature" index="0"]
-bones/3/rotation = Quaternion(-2.2355617e-09, 3.3997996e-08, -0.010027442, 0.99994975)
-bones/4/rotation = Quaternion(0.7071068, -6.731778e-08, -1.9873424e-07, 0.7071067)
+[node name="Skeleton3D" parent="Model/Armature" index="0"]
+bones/0/rotation = Quaternion(0.23568562, -0.017480204, 0.0042399415, 0.9716629)
+bones/1/rotation = Quaternion(0.55203474, -0.048026998, -0.072149426, 0.8293042)
+bones/2/rotation = Quaternion(0.62201923, 0.05665885, 0.07084227, 0.7777296)
+bones/3/rotation = Quaternion(0.32999465, -0.0033091435, -0.009465692, 0.94392955)
+bones/4/rotation = Quaternion(0.7071068, -6.980575e-08, -2.001976e-07, 0.7071067)
+bones/4/scale = Vector3(1, 1.0000001, 1)
 
-[node name="DemonMonk" parent="DemonMonk/Armature/Skeleton3D" index="0"]
+[node name="DemonMonk" parent="Model/Armature/Skeleton3D" index="0"]
 "blend_shapes/Key 4" = -1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("BoxShape3D_e4m7j")
 
-[editable path="DemonMonk"]
+[editable path="Model"]

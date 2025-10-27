@@ -32,9 +32,13 @@ script/source = "extends Label3D
 
 
 
+func _ready() -> void:
+	text = ''
 
 func _on_ritual_action_maked(act: String) -> void:
 	text = act
+func _on_ritual_ended() -> void:
+	text = ''
 "
 
 [node name="MainRoom" type="Node3D"]
@@ -82,9 +86,10 @@ one_shot = true
 player = NodePath("../../Player")
 
 [node name="DemonSummoner" parent="RitualArea" instance=ExtResource("7_c2lvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.760057)
 
 [node name="Trigger" parent="RitualArea" instance=ExtResource("9_5c206")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.086883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.2672462)
 
 [node name="PlayerPosition" type="Marker3D" parent="RitualArea/Trigger"]
 transform = Transform3D(1, 0, 0, 0, 0.99050945, 0.13744454, 0, -0.13744454, 0.99050945, 0, -1, 0)
@@ -94,6 +99,7 @@ gizmo_extents = 1.0
 shape = SubResource("CylinderShape3D_dt74c")
 
 [node name="DebugTriggerShape" type="MeshInstance3D" parent="RitualArea/Trigger"]
+visible = false
 mesh = SubResource("CylinderMesh_dt74c")
 surface_material_override/0 = SubResource("StandardMaterial3D_wn8mm")
 
@@ -131,7 +137,7 @@ script = ExtResource("14_mwfpk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.4038577)
 
 [node name="Sectarian2" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(0.9153958, 0, -0.402555, 0, 1, 0, 0.402555, 0, 0.9153958, 1.344836, 0, -2.730549)
+transform = Transform3D(0.9053614, 0, -0.42464194, 0, 1, 0, 0.42464194, 0, 0.9053614, 1.5418051, 0, -2.7383287)
 
 [node name="Sectarian3" parent="Sectarians" instance=ExtResource("13_mwfpk")]
 transform = Transform3D(0.47367328, 0, -0.8807007, 0, 1, 0, 0.8807007, 0, 0.47367328, 2.6254048, 2.3841858e-07, -1.4867542)
@@ -140,26 +146,32 @@ transform = Transform3D(0.47367328, 0, -0.8807007, 0, 1, 0, 0.8807007, 0, 0.4736
 transform = Transform3D(-0.06918193, 0, -0.99760413, 0, 1, 0, 0.99760413, 0, -0.06918193, 3.213358, 0, -0.088382006)
 
 [node name="Sectarian5" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(-0.58283234, 0, -0.81259245, 0, 1, 0, 0.81259245, 0, -0.58283234, 2.6785457, 2.3841858e-07, 1.4955527)
+transform = Transform3D(-0.58283234, 0, -0.81259245, 0, 1, 0, 0.81259245, 0, -0.58283234, 2.7661064, 2.3841858e-07, 1.3302068)
 
 [node name="Sectarian6" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(-0.91728264, 0, -0.39823678, 0, 1, 0, 0.39823678, 0, -0.91728264, 1.90172, 2.3841858e-07, 2.5554447)
+transform = Transform3D(-0.91728264, 0, -0.39823678, 0, 1, 0, 0.39823678, 0, -0.91728264, 1.95055, 2.3841858e-07, 2.6466649)
 
 [node name="Sectarian7" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(-0.91189826, 0, 0.41041657, 0, 1, 0, -0.41041657, 0, -0.91189826, -1.8564794, 0, 3.1140387)
+transform = Transform3D(-0.91189826, 0, 0.41041657, 0, 1, 0, -0.41041657, 0, -0.91189826, -2.0509045, 0, 2.853975)
 
 [node name="Sectarian8" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(-0.41943622, 0, 0.907785, 0, 1, 0, -0.907785, 0, -0.41943622, -3.1184149, 0, 1.6708548)
+transform = Transform3D(-0.41943622, 0, 0.907785, 0, 1, 0, -0.907785, 0, -0.41943622, -3.0989168, 0, 1.4607284)
 
 [node name="Sectarian9" parent="Sectarians" instance=ExtResource("13_mwfpk")]
 transform = Transform3D(-0.059985727, 0, 0.9981994, 0, 1, 0, -0.9981994, 0, -0.059985727, -3.3260956, 0, -0.26623476)
 
 [node name="Sectarian10" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(0.5895772, 0, 0.80771214, 0, 1, 0, -0.80771214, 0, 0.5895772, -2.8623605, 2.3841858e-07, -2.279214)
+transform = Transform3D(0.49860895, 0, 0.8668272, 0, 1, 0, -0.8668272, 0, 0.49860895, -2.9269767, 2.3841858e-07, -1.9731631)
+
+[node name="Sectarian11" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(0.92921656, 0, 0.36953586, 0, 1, 0, -0.36953586, 0, 0.92921656, -1.7181884, 2.3841858e-07, -3.2165768)
 
 [connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/QTEGame" method="_on_ritual_action_maked"]
 [connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/ActionLabel" method="_on_ritual_action_maked"]
 [connection signal="action_maked" from="RitualArea/Ritual" to="Sectarians" method="_on_ritual_action_maked"]
 [connection signal="ended" from="RitualArea/Ritual" to="RitualArea/QTEGame" method="_on_ritual_ended"]
+[connection signal="ended" from="RitualArea/Ritual" to="RitualArea/ActionLabel" method="_on_ritual_ended"]
+[connection signal="ended" from="RitualArea/Ritual" to="Sectarians" method="_on_ritual_ended"]
 [connection signal="started" from="RitualArea/Ritual" to="RitualArea/QTEGame" method="_on_ritual_started"]
+[connection signal="summoned" from="RitualArea/DemonSummoner" to="RitualArea" method="_on_demon_summoner_summoned"]
 [connection signal="player_entered" from="RitualArea/Trigger" to="RitualArea" method="_on_trigger_player_entered" flags=6]
