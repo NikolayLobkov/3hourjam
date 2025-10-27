@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=25 format=3 uid="uid://dsdafmm8uboj3"]
-=======
-[gd_scene load_steps=28 format=3 uid="uid://dsdafmm8uboj3"]
->>>>>>> 2958f0975727b163d64dbbbb162e86bcc65108ba
+[gd_scene load_steps=29 format=3 uid="uid://dsdafmm8uboj3"]
 
 [ext_resource type="PackedScene" uid="uid://hwjqp78r3gpa" path="res://assets/levels/models/room_main.tscn" id="1_xlv32"]
 [ext_resource type="Environment" uid="uid://dgn7yadiyci1m" path="res://levels/environment_0.tres" id="2_bbvwo"]
@@ -24,13 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://c5gby5giqb6oo" path="res://objects/props/candle_1.tscn" id="18_m0lr2"]
 [ext_resource type="PackedScene" uid="uid://dpiyc15rkawy5" path="res://objects/props/candles_no_light.tscn" id="18_m2tq3"]
 [ext_resource type="PackedScene" uid="uid://thgbjmlcutvd" path="res://objects/props/chalice.tscn" id="19_mqd01"]
-<<<<<<< HEAD
-[ext_resource type="AudioStream" uid="uid://m0pf7x1u5swf" path="res://assets/Audio/music/MUSIC_ambient.mp3" id="20_mqd01"]
-=======
 [ext_resource type="PackedScene" uid="uid://baqei342ipmx3" path="res://objects/props/candle_no_light.tscn" id="19_qf884"]
 [ext_resource type="PackedScene" uid="uid://vj342yewfp8e" path="res://objects/props/chandelier_ceiling.tscn" id="20_m2tq3"]
+[ext_resource type="AudioStream" uid="uid://m0pf7x1u5swf" path="res://assets/Audio/music/MUSIC_ambient.mp3" id="20_mqd01"]
 [ext_resource type="PackedScene" uid="uid://ckd7xdfsjy1ki" path="res://assets/levels/models/Pentagram.glb" id="21_m2tq3"]
->>>>>>> 2958f0975727b163d64dbbbb162e86bcc65108ba
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dt74c"]
 radius = 1.1
@@ -312,16 +305,14 @@ transform = Transform3D(0.49860895, 0, 0.8668272, 0, 1, 0, -0.8668272, 0, 0.4986
 [node name="Sectarian11" parent="Sectarians" instance=ExtResource("13_mwfpk")]
 transform = Transform3D(0.92921656, 0, 0.36953586, 0, 1, 0, -0.36953586, 0, 0.92921656, -1.7181884, 2.3841858e-07, -3.2165768)
 
-<<<<<<< HEAD
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_mqd01")
 pitch_scale = 0.74
 autoplay = true
 parameters/looping = false
-=======
+
 [node name="Pentagram2" parent="." instance=ExtResource("21_m2tq3")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.011, 0)
->>>>>>> 2958f0975727b163d64dbbbb162e86bcc65108ba
 
 [connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/QTEGame" method="_on_ritual_action_maked"]
 [connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/ActionLabel" method="_on_ritual_action_maked"]
