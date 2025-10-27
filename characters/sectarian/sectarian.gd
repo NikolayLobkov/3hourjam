@@ -15,4 +15,6 @@ func action(act: String) -> void:
 		'3': play_animation('RaiseHands')
 		'4': play_animation('Sacrifice')
 		'5': play_animation('Bow')
-		'6': play_animation('ChoralSinging')
+		'6': 
+			$SoundChoir.play()
+			play_animation('ChoralSinging')

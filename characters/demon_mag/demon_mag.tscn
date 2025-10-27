@@ -1,10 +1,129 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5ybk5ymjk0y7"]
+[gd_scene load_steps=19 format=3 uid="uid://c5ybk5ymjk0y7"]
 
 [ext_resource type="Script" uid="uid://c43i3bxckgvoc" path="res://characters/demon.gd" id="1_8g2g2"]
 [ext_resource type="PackedScene" uid="uid://slytln811vf2" path="res://assets/characters/DemonMag.glb" id="2_e7cma"]
+[ext_resource type="AudioStream" uid="uid://dsx1i6ndyl8qu" path="res://assets/Audio/sounds/sound_bad_ending.mp3" id="3_ebfik"]
+[ext_resource type="AudioStream" uid="uid://boourkikvq1s0" path="res://assets/Audio/sounds/sound_good_ending.ogg" id="4_h0qh8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e7cma"]
 size = Vector3(4.535, 9, 2.349)
+
+[sub_resource type="Animation" id="Animation_h0qh8"]
+resource_name = "Fire"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.99, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_l27tb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w6jk0"]
+_data = {
+&"Fire": SubResource("Animation_h0qh8"),
+&"RESET": SubResource("Animation_l27tb")
+}
+
+[sub_resource type="GDScript" id="GDScript_h0qh8"]
+script/source = "extends AnimationPlayer
+
+
+func _ready() -> void:
+	get_parent().good.connect(play.bind(\"Fire\"))
+	get_parent().good.connect($\"../AnimationPlayer2\".play.bind(\"explosion\"))
+"
+
+[sub_resource type="Gradient" id="Gradient_mtl6p"]
+offsets = PackedFloat32Array(0, 0.4918033, 0.6229508, 0.6557377)
+colors = PackedColorArray(0, 1.2667297, 0.5835024, 1, 0.07450981, 0.9254902, 0.46666667, 0.14117648, 0.22634518, 0.22634518, 0.22634518, 0.22634518, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lbywc"]
+gradient = SubResource("Gradient_mtl6p")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpreo"]
+transparency = 1
+albedo_texture = SubResource("GradientTexture2D_lbywc")
+emission_enabled = true
+emission = Color(0, 1.5478003, 0.82606626, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jjxfe"]
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_s1ulo"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h0qh8"]
+spread = 180.0
+flatness = 1.0
+initial_velocity_max = 76.92
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+
+[sub_resource type="Animation" id="Animation_w6jk0"]
+resource_name = "explosion"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D2:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_mtl6p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles3D2:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lbywc"]
+_data = {
+&"RESET": SubResource("Animation_mtl6p"),
+&"explosion": SubResource("Animation_w6jk0")
+}
 
 [node name="DemonMag" type="CharacterBody3D" node_paths=PackedStringArray("animation_player")]
 transform = Transform3D(0.57, 0, 0, 0, 0.57, 0, 0, 0, 0.57, 0, 0, 0)
@@ -14,18 +133,51 @@ animation_player = NodePath("Model/AnimationPlayer")
 [node name="Model" parent="." instance=ExtResource("2_e7cma")]
 
 [node name="Skeleton3D" parent="Model/Armature" index="0"]
-bones/2/rotation = Quaternion(0.43701333, 1.0722339e-07, 5.2096055e-08, 0.899455)
-bones/4/rotation = Quaternion(-0.080634035, -0.28905344, -0.6528803, 0.6954808)
-bones/5/rotation = Quaternion(0.226377, 0.43940997, -0.42112088, 0.76047987)
-bones/6/rotation = Quaternion(0.0013810935, 1.2275231e-07, 0.23336816, 0.9723875)
-bones/7/rotation = Quaternion(-0.0013192428, 5.8431646e-09, -0.22292525, 0.9748347)
-bones/9/rotation = Quaternion(-0.08063399, 0.28905347, 0.6528803, 0.6954808)
-bones/10/rotation = Quaternion(0.22585127, -0.42124742, 0.43371046, 0.76383054)
-bones/11/rotation = Quaternion(0.001381099, -1.17743156e-07, -0.23336819, 0.9723875)
-bones/12/rotation = Quaternion(-0.0013192496, -1.6492209e-09, 0.22292522, 0.9748347)
+bones/2/rotation = Quaternion(0.37039936, 1.10730234e-07, -1.498154e-07, 0.9288726)
+bones/4/rotation = Quaternion(-0.009807737, -0.44249582, -0.47709462, 0.75926423)
+bones/5/rotation = Quaternion(0.1347682, 0.0332643, -0.46588382, 0.87388974)
+bones/6/rotation = Quaternion(-0.035988323, 0.004335892, 0.4360086, 0.8992121)
+bones/7/rotation = Quaternion(-0.014970741, 0.00042978564, -0.03214893, 0.9993709)
+bones/9/rotation = Quaternion(-0.009807737, 0.44249582, 0.47709462, 0.75926423)
+bones/10/rotation = Quaternion(0.13476826, -0.03326428, 0.46588382, 0.87388974)
+bones/11/rotation = Quaternion(-0.03598834, -0.0043358733, -0.4360086, 0.8992121)
+bones/12/rotation = Quaternion(-0.014970752, -0.00042979704, 0.03214893, 0.9993709)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -0.19321322)
 shape = SubResource("BoxShape3D_e7cma")
+
+[node name="BadDemon" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ebfik")
+
+[node name="SoundGoodEnding" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h0qh8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w6jk0")
+}
+script = SubResource("GDScript_h0qh8")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.213017, 2.7599597)
+material_override = SubResource("StandardMaterial3D_jpreo")
+process_material = SubResource("ParticleProcessMaterial_jjxfe")
+draw_pass_1 = SubResource("QuadMesh_s1ulo")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.213017, 2.7599597)
+material_override = SubResource("StandardMaterial3D_jpreo")
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_h0qh8")
+draw_pass_1 = SubResource("QuadMesh_s1ulo")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lbywc")
+}
 
 [editable path="Model"]

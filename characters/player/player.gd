@@ -87,11 +87,15 @@ func play_animation(anim_name: StringName) -> void:
 func action(act: String) -> void:
 	$Sectarian/Armature/Skeleton3D/CameraBone2/Knife.visible = false
 	match act:
-		'1': play_animation('Clamp')
+		'1': 
+			$SoundsClaping.play()
+			play_animation('Clamp')
 		'2': play_animation('FoldArms')
 		'3': play_animation('RaiseHands')
 		'4': 
 			$Sectarian/Armature/Skeleton3D/CameraBone2/Knife.visible = true
+			$AnimationPlayer.play("knife")
 			play_animation('Sacrifice')
+			#animation_player.stop()
 		'5': play_animation('Bow')
 		'6': play_animation('ChoralSinging')
