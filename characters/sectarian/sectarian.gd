@@ -20,4 +20,6 @@ func action(act: String) -> void:
 			play_animation('Sacrifice')
 			$Sectarian/Armature/Skeleton3D/Item/Knife.show()
 		'5': play_animation('Bow')
-		'6': play_animation('ChoralSinging')
+		'6': 
+			$SoundChoir.play()
+			play_animation('ChoralSinging')

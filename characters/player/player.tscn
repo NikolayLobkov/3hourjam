@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://lbyfu5tppd00"]
+[gd_scene load_steps=14 format=3 uid="uid://lbyfu5tppd00"]
 
 [ext_resource type="Script" uid="uid://s8j5d28vx12a" path="res://characters/player/player.gd" id="1_oul6g"]
 [ext_resource type="PackedScene" uid="uid://bjupsatumsh3k" path="res://assets/characters/Sectarian.glb" id="2_exd8k"]
 [ext_resource type="PackedScene" uid="uid://dhej5polbmf0b" path="res://UI/player_ui/player_ui.tscn" id="2_xxgcw"]
 [ext_resource type="PackedScene" uid="uid://bqqcqhkud57c0" path="res://objects/props/knife.tscn" id="3_5dc8e"]
+[ext_resource type="AudioStream" uid="uid://ckv1wu3rdjru2" path="res://assets/Audio/sounds/sound_player_sacrifice.mp3" id="5_ixbpm"]
+[ext_resource type="AudioStream" uid="uid://de4vml8vftak4" path="res://assets/Audio/sounds/sounds_claping.wav" id="6_c6leb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
@@ -32,6 +34,42 @@ func _physics_process(delta: float) -> void:
 	fov = initial_fov + sin(time * speed) * amplitude
 "
 
+[sub_resource type="Animation" id="Animation_dirf7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SoundPlayerSacrifice:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_c6leb"]
+resource_name = "knife"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SoundPlayerSacrifice:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.53333336),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_idpv6"]
+_data = {
+&"RESET": SubResource("Animation_dirf7"),
+&"knife": SubResource("Animation_c6leb")
+}
+
 [node name="Player" type="CharacterBody3D"]
 physics_interpolation_mode = 1
 wall_min_slide_angle = 0.43633232
@@ -42,17 +80,18 @@ script = ExtResource("1_oul6g")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Sectarian/Armature" index="0"]
+bones/2/rotation = Quaternion(0.18560202, 0, 0, 0.982625)
 bones/3/rotation = Quaternion(2.2821007e-07, 2.3384179e-07, 0.86674434, -0.49875274)
-bones/4/rotation = Quaternion(0.26474643, -0.17770213, -0.48230356, 0.8159134)
-bones/5/rotation = Quaternion(0.5528054, 0.25531107, -0.19702339, 0.7683777)
-bones/6/rotation = Quaternion(0.0922814, -0.4449015, 0.17434809, 0.87358433)
+bones/4/rotation = Quaternion(0.30948168, -0.20772895, -0.47862875, 0.7949744)
+bones/5/rotation = Quaternion(0.6258672, 0.28905436, -0.22286212, 0.6892535)
+bones/6/rotation = Quaternion(0.2404792, -0.68054295, 0.19635963, 0.6636821)
 bones/7/rotation = Quaternion(-2.2821007e-07, 2.3384179e-07, 0.86674434, 0.49875274)
-bones/8/rotation = Quaternion(0.21101342, 0.13343272, 0.4249834, 0.8700909)
-bones/9/rotation = Quaternion(0.33146086, -0.14389797, 0.062076528, 0.9303621)
-bones/10/rotation = Quaternion(-0.027991777, 0.467103, 0.033929612, 0.88310826)
+bones/8/rotation = Quaternion(0.23171265, 0.25260165, 0.52343994, 0.7800721)
+bones/9/rotation = Quaternion(0.47411394, -0.19045818, 0.2025439, 0.83541477)
+bones/10/rotation = Quaternion(-0.03985755, 0.59577113, 0.03392767, 0.8014469)
 
 [node name="CameraBone" type="BoneAttachment3D" parent="Sectarian/Armature/Skeleton3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5432317, 0)
+transform = Transform3D(1, 0, 0, 0, 0.93110377, -0.36475438, 0, 0.36475438, 0.93110377, 0, 1.5432317, 0)
 bone_name = "Head"
 bone_idx = 2
 
@@ -63,7 +102,7 @@ update_rotation = false
 update_scale = false
 
 [node name="CameraBone2" type="BoneAttachment3D" parent="Sectarian/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.7871583, 0.1895878, -0.5868887, -0.60227096, -0.44127566, 0.6652405, -0.13285832, 0.8771157, 0.46153724, -0.25187284, 1.0304636, 0.43599552)
+transform = Transform3D(-0.23046473, 0.45379552, -0.86078775, -0.9368807, 0.13555758, 0.32230163, 0.26294526, 0.8807348, 0.39391112, -0.11961635, 1.2488767, 0.4776348)
 bone_name = "Arm3.r"
 bone_idx = 10
 
@@ -87,7 +126,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_oul6g")
 
 [node name="CameraPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 1.6513203, -0.15509576)
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -2.5125546e-09, 1.5873016, -0.18383603)
 
 [node name="Camera" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.027825505)
@@ -97,5 +136,17 @@ far = 50.0
 script = SubResource("GDScript_xxgcw")
 
 [node name="PlayerUI" parent="." instance=ExtResource("2_xxgcw")]
+
+[node name="SoundPlayerSacrifice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ixbpm")
+
+[node name="SoundsClaping" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_c6leb")
+pitch_scale = 0.4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_idpv6")
+}
 
 [editable path="Sectarian"]
