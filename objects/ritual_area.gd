@@ -9,6 +9,7 @@ extends Node3D
 
 
 
+
 func _on_trigger_player_entered(player: Player) -> void:
 	player.input_enabled = false
 	combination_creator.create_combination()
@@ -21,13 +22,13 @@ func _on_trigger_player_entered(player: Player) -> void:
 	await fade.faded_in
 	
 	player.global_position = player_position.global_position
+	player.global_rotation.y = player_position.global_rotation.y
 	player.look_rotation = player_position.global_rotation
 	
 	fade.fade_out()
 	await fade.faded_out
 	
 	
-	#qte_game.start()
 	ritual.start()
 
 

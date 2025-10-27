@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://1uq0ie5vhgbq"]
 
 [ext_resource type="Script" uid="uid://c43i3bxckgvoc" path="res://characters/demon.gd" id="1_e4m7j"]
-[ext_resource type="PackedScene" uid="uid://ymkko5iedfb5" path="res://assets/characters/DemonMonk.glb" id="2_knkma"]
+[ext_resource type="PackedScene" uid="uid://d3cjeewbnegxl" path="res://assets/characters/DemonMonk.fbx" id="2_knkma"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e4m7j"]
 size = Vector3(2, 4, 1)
@@ -11,10 +11,13 @@ script = ExtResource("1_e4m7j")
 metadata/_custom_type_script = "uid://dk8avrrcxjdnw"
 
 [node name="DemonMonk" parent="." instance=ExtResource("2_knkma")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.143, 0)
 
-[node name="AnimationPlayer" parent="DemonMonk" index="1"]
-autoplay = "CylinderAction"
+[node name="Skeleton3D" parent="DemonMonk/Armature" index="0"]
+bones/3/rotation = Quaternion(-2.2355617e-09, 3.3997996e-08, -0.010027442, 0.99994975)
+bones/4/rotation = Quaternion(0.7071068, -6.731778e-08, -1.9873424e-07, 0.7071067)
+
+[node name="DemonMonk" parent="DemonMonk/Armature/Skeleton3D" index="0"]
+"blend_shapes/Key 4" = -1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

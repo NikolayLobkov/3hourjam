@@ -22,6 +22,7 @@ var waiting_player_input: bool = false
 func _on_ritual_started(_combination: String) -> void:
 	combination = _combination
 	created_combination = ''
+	player.play_animation('Idle')
 
 func _on_ritual_action_maked(_act: String) -> void:
 	waiting_player_input = true
@@ -45,7 +46,7 @@ func action(act: String) -> void:
 	action_maked.emit(act)
 	action_timeout_timer.stop()
 	
-	player.play_animation(act)
+	player.action(act)
 	
 	print('Your action: ', act)
 

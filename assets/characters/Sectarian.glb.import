@@ -16491,7 +16491,7 @@ _subresources={
 "materials": {
 "Sectarian": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/characters/Materials/Sectarian.tres",
+"use_external/fallback_path": "res://assets/characters/materials/Sectarian.tres",
 "use_external/path": "uid://bm0osighjmunu"
 }
 }

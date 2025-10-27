@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://lbyfu5tppd00"]
+[gd_scene load_steps=8 format=3 uid="uid://lbyfu5tppd00"]
 
 [ext_resource type="Script" uid="uid://s8j5d28vx12a" path="res://characters/player/player.gd" id="1_oul6g"]
+[ext_resource type="PackedScene" uid="uid://bjupsatumsh3k" path="res://assets/characters/Sectarian.glb" id="2_exd8k"]
 [ext_resource type="PackedScene" uid="uid://dhej5polbmf0b" path="res://UI/player_ui/player_ui.tscn" id="2_xxgcw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
@@ -36,18 +37,48 @@ wall_min_slide_angle = 0.43633232
 floor_stop_on_slope = false
 script = ExtResource("1_oul6g")
 
+[node name="Sectarian" parent="." instance=ExtResource("2_exd8k")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Sectarian/Armature" index="0"]
+bones/3/rotation = Quaternion(2.2821007e-07, 2.3384179e-07, 0.86674434, -0.49875274)
+bones/4/rotation = Quaternion(0.22039914, -0.11621253, -0.35627478, 0.9005482)
+bones/5/rotation = Quaternion(0.5713171, 0.030165501, -0.6379468, 0.5154714)
+bones/6/rotation = Quaternion(0.43867064, -0.07112476, -0.036392663, 0.8950894)
+bones/7/rotation = Quaternion(-2.2821007e-07, 2.3384179e-07, 0.86674434, 0.49875274)
+bones/8/rotation = Quaternion(0.22039914, 0.11621253, 0.35627478, 0.9005482)
+bones/9/rotation = Quaternion(0.571317, -0.030165592, 0.63794684, 0.51547134)
+bones/10/rotation = Quaternion(0.43867067, 0.07112476, 0.03639266, 0.8950893)
+
+[node name="CameraBone" type="BoneAttachment3D" parent="Sectarian/Armature/Skeleton3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5432317, 0)
+bone_name = "Head"
+bone_idx = 2
+
+[node name="CameraRemote" type="RemoteTransform3D" parent="Sectarian/Armature/Skeleton3D/CameraBone"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.3558902e-08, 0.10808861, 0.15509576)
+remote_path = NodePath("../../../../../CameraPivot")
+update_rotation = false
+update_scale = false
+
+[node name="AnimationPlayer" parent="Sectarian" index="1"]
+playback_auto_capture_transition_type = 4
+playback_auto_capture_ease_type = 3
+playback_default_blend_time = 1.0
+
 [node name="CollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_kqu6x")
 
 [node name="TestMesh" type="MeshInstance3D" parent="CollisionShape"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.31129992)
+visible = false
 mesh = SubResource("CapsuleMesh_kqu6x")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_oul6g")
 
 [node name="CameraPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7047167, -0.29352796)
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 1.6513203, -0.15509576)
 
 [node name="Camera" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.027825505)
@@ -57,3 +88,5 @@ far = 50.0
 script = SubResource("GDScript_xxgcw")
 
 [node name="PlayerUI" parent="." instance=ExtResource("2_xxgcw")]
+
+[editable path="Sectarian"]

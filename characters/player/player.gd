@@ -5,7 +5,7 @@ const CAMERA_SENSITIVITY: float = 0.004
 const CAMERA_SMOOTH: float = 25.0
 
 @onready var camera_pivot: Node3D = $CameraPivot
-@onready var animation_player: AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Sectarian/AnimationPlayer
 
 var cur_speed: float = 4.0
 
@@ -33,6 +33,12 @@ func _physics_process(_delta: float) -> void:
 	velocity.x = input_direction.x * cur_speed
 	velocity.z = input_direction.y * cur_speed
 	
+	if input_enabled:
+		if velocity.length() > 0.1:
+			play_animation('Walk')
+		else:
+			play_animation('Idle')
+	
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
 	
 	if not is_on_floor():
@@ -42,24 +48,33 @@ func _physics_process(_delta: float) -> void:
 
 
 func _process(delta: float) -> void:
-	look_velocity = look_velocity.lerp(look_relative, delta * CAMERA_SMOOTH)
 	
-	look_rotation.y += look_velocity.y
-	look_rotation.x = clampf(look_rotation.x + look_velocity.x, -PI / 3.0, PI / 3.0)
+	
+	if input_enabled:
+		look_velocity = look_velocity.lerp(look_relative, delta * CAMERA_SMOOTH)
+		
+		look_rotation.y += look_velocity.y
+		look_rotation.x = clampf(look_rotation.x + look_velocity.x, -PI / 3.0, PI / 3.0)
+		
+		rotation.y = look_rotation.y
+		camera_pivot.rotation.x = look_rotation.x
+	else:
+		look_velocity = look_velocity.lerp(look_relative * 0.5, delta * CAMERA_SMOOTH * 0.3)
+		
+		look_rotation.y = clampf(look_rotation.y + look_velocity.y, -PI / 6.0, PI / 6.0)
+		look_rotation.x = clampf(look_rotation.x + look_velocity.x, -PI / 6.0, PI / 6.0)
+		
+		camera_pivot.rotation.y = look_rotation.y
+		camera_pivot.rotation.x = look_rotation.x
 	
 	look_relative = Vector3.ZERO
-	
-	rotation.y = look_rotation.y
-	camera_pivot.rotation.x = look_rotation.x
-
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		
-		if input_enabled:
-			look_relative.y -= event.relative.x * CAMERA_SENSITIVITY
-			look_relative.x -= event.relative.y * CAMERA_SENSITIVITY
-			
+		look_relative.y -= event.relative.x * CAMERA_SENSITIVITY
+		look_relative.x -= event.relative.y * CAMERA_SENSITIVITY
+		
 	
 	if event is InputEventKey:
 		if event.keycode == KEY_ESCAPE and event.is_pressed():
@@ -68,3 +83,12 @@ func _input(event: InputEvent) -> void:
 
 func play_animation(anim_name: StringName) -> void:
 	animation_player.play(anim_name)
+
+func action(act: String) -> void:
+	match act:
+		'1': play_animation('Clamp')
+		'2': play_animation('FoldArms')
+		'3': play_animation('RaiseHands')
+		'4': play_animation('Sacrifice')
+		'5': play_animation('Bow')
+		'6': play_animation('ChoralSinging')
