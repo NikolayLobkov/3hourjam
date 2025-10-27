@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://body17xmouij2" path="res://characters/sectarian/sectarian.gd" id="1_cwktq"]
 [ext_resource type="PackedScene" uid="uid://bjupsatumsh3k" path="res://assets/characters/Sectarian.glb" id="2_cwktq"]
+<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://cvbm7kkq61jd7" path="res://assets/Audio/sounds/sound_choir.ogg" id="3_cma58"]
+=======
+[ext_resource type="PackedScene" uid="uid://bqqcqhkud57c0" path="res://objects/props/knife.tscn" id="3_cma58"]
+>>>>>>> 2958f0975727b163d64dbbbb162e86bcc65108ba
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_51igg"]
 
@@ -13,6 +17,7 @@ metadata/_custom_type_script = "uid://dk8avrrcxjdnw"
 [node name="Sectarian" parent="." instance=ExtResource("2_cwktq")]
 
 [node name="Skeleton3D" parent="Sectarian/Armature" index="0"]
+<<<<<<< HEAD
 bones/1/rotation = Quaternion(0.58693933, 0, 0, 0.80963093)
 bones/3/rotation = Quaternion(2.2821013e-07, 2.3384179e-07, 0.86674434, -0.49875274)
 bones/4/rotation = Quaternion(0.5477409, -0.20996782, -0.38878316, 0.7104514)
@@ -22,6 +27,21 @@ bones/7/rotation = Quaternion(-2.2821013e-07, 2.3384179e-07, 0.86674434, 0.49875
 bones/8/rotation = Quaternion(-5.895194e-07, 2.9915915e-07, 0.4726366, 0.8812574)
 bones/9/rotation = Quaternion(-8.579184e-09, -1.2408201e-08, 0.0011116193, 0.9999994)
 bones/10/rotation = Quaternion(0.01278174, 4.3471527e-08, 0.028756278, 0.99950475)
+=======
+bones/3/rotation = Quaternion(2.2821007e-07, 2.3384179e-07, 0.86674434, -0.49875274)
+bones/5/rotation = Quaternion(-8.603744e-09, 1.3360869e-08, -0.0011116189, 0.9999994)
+bones/6/rotation = Quaternion(0.012781748, -4.3686008e-08, -0.028756278, 0.99950475)
+bones/7/rotation = Quaternion(-2.2821007e-07, 2.3384179e-07, 0.86674434, 0.49875274)
+bones/9/rotation = Quaternion(-8.603744e-09, -1.3360869e-08, 0.0011116189, 0.9999994)
+
+[node name="Item" type="BoneAttachment3D" parent="Sectarian/Armature/Skeleton3D" index="0"]
+transform = Transform3D(-0.9999997, -4.3360732e-08, 0.0007340049, 1.8689725e-05, -0.99967337, 0.025550755, 0.0007337641, 0.025550764, 0.99967325, -0.2925094, 0.792703, -3.2800124e-08)
+bone_name = "Arm3.r"
+bone_idx = 10
+
+[node name="Knife" parent="Sectarian/Armature/Skeleton3D/Item" instance=ExtResource("3_cma58")]
+transform = Transform3D(0.27128914, -0.06470298, 0.9655261, -0.10888403, -0.99842405, -0.036313836, 0.96154636, -0.0948048, -0.2765241, -0.0800478, 0.10790661, -0.0378353)
+>>>>>>> 2958f0975727b163d64dbbbb162e86bcc65108ba
 
 [node name="AnimationPlayer" parent="Sectarian" index="1"]
 autoplay = "Idle"

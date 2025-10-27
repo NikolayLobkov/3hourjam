@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3cjeewbnegxl"
-path="res://.godot/imported/DemonMonk.fbx-e8fe144298c907b0ed9899420bec395b.scn"
+uid="uid://ckd7xdfsjy1ki"
+path="res://.godot/imported/Pentagram.glb-f12b3643bcb5d0a24adb706fb4805f6e.scn"
 
 [deps]
 
-source_file="res://assets/characters/DemonMonk.fbx"
-dest_files=["res://.godot/imported/DemonMonk.fbx-e8fe144298c907b0ed9899420bec395b.scn"]
+source_file="res://assets/levels/models/Pentagram.glb"
+dest_files=["res://.godot/imported/Pentagram.glb-f12b3643bcb5d0a24adb706fb4805f6e.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -39,14 +39,12 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"DemonMonk": {
+"M_PropsAtlas": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/characters/materials/DemonMonk.tres",
-"use_external/path": "uid://ckxa6jvpb2lk"
+"use_external/fallback_path": "res://assets/levels/materials/M_PropsAtlas.tres",
+"use_external/path": "uid://b4tqoy4dofw5h"
 }
 }
 }
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
-fbx/naming_version=2
+gltf/naming_version=2
+gltf/embedded_image_handling=1

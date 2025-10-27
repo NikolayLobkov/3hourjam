@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=4 uid="uid://ctpecr3l5jl6o"]
+
+[ext_resource type="PackedScene" uid="uid://ka8jchr0h57c" path="res://assets/levels/models/props/Tombstone.glb" id="1_t7i6f"]
+[ext_resource type="Material" uid="uid://b4tqoy4dofw5h" path="res://assets/levels/materials/M_PropsAtlas.tres" id="2_cp1ds"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k3hdd"]
+size = Vector3(0.374115, 1.9191895, 0.98046875)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ig4og"]
+_surfaces = [{
+"aabb": AABB(-1.0253536, 0.08834267, -1.9642162, 1.4435439, 7.710639, 3.9284325),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAwAAAAQABAAAAAIAAwAEAAUABAACAAYABQAEAAYAAwAFAAcAAwAHAAEABQAGAAcAAgAIAAYABwAJAAEAAQAKAAIAAgAKAAgAAQAJAAoABgAIAAsABgALAAcACwAIAAoABwALAAkACwAKAAkA"),
+"name": "M_PropsAtlas",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("MhYAAP//AAA7AcTxfQoAADsBxPGB9QAAMhYAAAAAAADM6QAA//8AAMzpAAAAAAAAw/7E8YH1AADD/sTxfQoAAP////+V2wAAAAD//2kkAAAAAP//ldsAAP////9pJAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dpmwq"]
+resource_name = "Tombstone_Cube_002"
+_surfaces = [{
+"aabb": AABB(-1.0253536, 0.08834267, -1.9642162, 1.4435439, 7.710639, 3.9284325),
+"attribute_data": PackedByteArray("Fc3y/k6pyrmOy8q5x6fy/sfHuLUVrbi1Hee6/KPabbc96G23w9u6/HD7IP+K17y55/m8uQLWIP8d9qe1VduntTf1Ov296O23V/btt93pOv1Ovmz0qMkMz6jJbPROvgzPo7Dc7k6+HdROvtzuo7Ad1E6+jc6jsB3UtLCNzk6+HdS0sGz0Tr7c7k6+bPSjsNzu"),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAQAEAAIAAQAFAAQABgAHAAgABgAJAAcACgALAAwACgANAAsACwAOAAwACwAPAA4AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEA"),
+"material": ExtResource("2_cp1ds"),
+"name": "M_PropsAtlas",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("MhYAAP///787AcTxfQr/vzsBxPGB9f+/MhYAAAAA/78AAP//ldv/vwAA//9pJP+/MhYAAAAA///D/sTxfQr//zsBxPF9Cv//zOkAAAAA///M6QAAAAD/v8P+xPGB9f+/w/7E8X0K/7/M6QAA////v/////9pJP+//////5Xb/7/M6QAA///lgDsBxPGB9eWAw/7E8YH15YAyFgAA///lgDIWAAAAAP+/zOkAAP///7/M6QAAAAD/vzIWAAD///+//////2kk//8AAP//ldv//wAA//9pJP///////5Xb//87AcTxgfX///////+V2///w/7E8YH1//8AAP//ldv//8P+xPF9Cv//AAD//2kk//87AcTxfQr///////9pJP//9X35/vV9+f71ffn+9X35/vV9+f71ffn+/3+Y/v9/mP7/f5j+/3+Y/vp+CgL6fgoC+n4KAvp+CgL6fgoC+n4KAv///3////9/////f////38AAP9/AAD/fwAA/38AAP9//3//v/9//7//f/+//3//v+rbAADq2wAA6tsAAP9/FKT/f+rb/3/q2/9/6tv/f+rb")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ig4og")
+
+[node name="TombstonesRow" instance=ExtResource("1_t7i6f")]
+
+[node name="Tombstone" parent="." index="0"]
+transform = Transform3D(0.24815124, 0, 0, 0, 0.24815124, 0, 0, 0, 0.24815124, 0, -0.019173563, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08532095, 0.9591099, 0)
+shape = SubResource("BoxShape3D_k3hdd")
+
+[node name="Tombstone3" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.24815124, 0, 0, 0, 0.24815124, 0, 0, 0, 0.24815124, 0, -0.019173563, -2.5)
+mesh = SubResource("ArrayMesh_dpmwq")
+skeleton = NodePath("")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08532095, 0.9591099, 0)
+shape = SubResource("BoxShape3D_k3hdd")
+
+[node name="Tombstone2" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(0.24815124, 0, 0, 0, 0.24815124, 0, 0, 0, 0.24815124, 0, -0.019173563, 2.5)
+mesh = SubResource("ArrayMesh_dpmwq")
+skeleton = NodePath("")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08532095, 0.9591099, 0)
+shape = SubResource("BoxShape3D_k3hdd")
