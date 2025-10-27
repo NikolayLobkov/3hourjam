@@ -1,5 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpiyc15rkawy5"]
+[gd_scene load_steps=3 format=3 uid="uid://dpiyc15rkawy5"]
 
 [ext_resource type="PackedScene" uid="uid://dkge1pxw7832g" path="res://assets/levels/models/props/Candles1.glb" id="1_h1i1t"]
+[ext_resource type="PackedScene" uid="uid://brdnctp3yohrl" path="res://assets/levels/models/props/Candle_Light.glb" id="2_et8kq"]
 
 [node name="Candles1" instance=ExtResource("1_h1i1t")]
+
+[node name="Candle_Light2" parent="." index="1" instance=ExtResource("2_et8kq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0028621256, 0.55215645, 0.016685978)
+
+[node name="Candle_Light3" parent="." index="2" instance=ExtResource("2_et8kq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011570215, 0.2847225, 0.106924236)
+
+[node name="Candle_Light4" parent="." index="3" instance=ExtResource("2_et8kq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0053174496, 0.33359885, -0.06287229)
+
+[node name="Candle_Light5" parent="." index="4" instance=ExtResource("2_et8kq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060860157, 0.33644205, 0.06378394)
+
+[node name="Candle_Light6" parent="." index="5" instance=ExtResource("2_et8kq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07182872, 0.24357957, -0.021434367)
+
+[node name="Candle_Light7" parent="." index="6" instance=ExtResource("2_et8kq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14006257, 0.20531642, 0.110147595)
+
+[node name="Candle_Light8" parent="." index="7" instance=ExtResource("2_et8kq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13957763, 0.16215259, 0.022913814)
+
+[node name="Candle_Light9" parent="." index="8" instance=ExtResource("2_et8kq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07884133, 0.4518429, -0.06475341)

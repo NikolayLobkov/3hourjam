@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://vj342yewfp8e"]
+[gd_scene load_steps=4 format=3 uid="uid://vj342yewfp8e"]
 
 [ext_resource type="PackedScene" uid="uid://dmgp2bjc6uiep" path="res://assets/levels/models/props/ChandelierCeiling.glb" id="1_uk2pr"]
 [ext_resource type="PackedScene" uid="uid://c5g68awkqfvlt" path="res://assets/levels/models/props/Chain.glb" id="2_s15b5"]
+[ext_resource type="PackedScene" uid="uid://cdp4lt717dk7r" path="res://assets/levels/models/props/ChandelierCeiling_Lights.glb" id="3_nq3yq"]
 
 [node name="СhandelierCeiling" instance=ExtResource("1_uk2pr")]
 
@@ -12,3 +13,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4508846, 0)
 
 [node name="Chain3" parent="." index="3" instance=ExtResource("2_s15b5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.888038, 0)
+
+[node name="ChandelierCeiling_Lights2" parent="." index="4" instance=ExtResource("3_nq3yq")]
