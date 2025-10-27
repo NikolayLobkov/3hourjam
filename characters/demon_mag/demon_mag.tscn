@@ -7,6 +7,7 @@
 size = Vector3(4.535, 9, 2.349)
 
 [node name="DemonMag" type="CharacterBody3D" node_paths=PackedStringArray("animation_player")]
+transform = Transform3D(0.57, 0, 0, 0, 0.57, 0, 0, 0, 0.57, 0, 0, 0)
 script = ExtResource("1_8g2g2")
 animation_player = NodePath("Model/AnimationPlayer")
 

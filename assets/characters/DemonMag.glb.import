@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "DemonMag": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/characters/materials/DemonMag.tres",
+"use_external/fallback_path": "res://assets/characters/Materials/DemonMag.tres",
 "use_external/path": "uid://ch6146qplbf28"
 }
 },

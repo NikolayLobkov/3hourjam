@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://lbyfu5tppd00"]
+[gd_scene load_steps=9 format=3 uid="uid://lbyfu5tppd00"]
 
 [ext_resource type="Script" uid="uid://s8j5d28vx12a" path="res://characters/player/player.gd" id="1_oul6g"]
 [ext_resource type="PackedScene" uid="uid://bjupsatumsh3k" path="res://assets/characters/Sectarian.glb" id="2_exd8k"]
 [ext_resource type="PackedScene" uid="uid://dhej5polbmf0b" path="res://UI/player_ui/player_ui.tscn" id="2_xxgcw"]
+[ext_resource type="PackedScene" uid="uid://bqqcqhkud57c0" path="res://objects/props/knife.tscn" id="3_5dc8e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
@@ -42,13 +43,13 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="Skeleton3D" parent="Sectarian/Armature" index="0"]
 bones/3/rotation = Quaternion(2.2821007e-07, 2.3384179e-07, 0.86674434, -0.49875274)
-bones/4/rotation = Quaternion(0.22039914, -0.11621253, -0.35627478, 0.9005482)
-bones/5/rotation = Quaternion(0.5713171, 0.030165501, -0.6379468, 0.5154714)
-bones/6/rotation = Quaternion(0.43867064, -0.07112476, -0.036392663, 0.8950894)
+bones/4/rotation = Quaternion(0.26474643, -0.17770213, -0.48230356, 0.8159134)
+bones/5/rotation = Quaternion(0.5528054, 0.25531107, -0.19702339, 0.7683777)
+bones/6/rotation = Quaternion(0.0922814, -0.4449015, 0.17434809, 0.87358433)
 bones/7/rotation = Quaternion(-2.2821007e-07, 2.3384179e-07, 0.86674434, 0.49875274)
-bones/8/rotation = Quaternion(0.22039914, 0.11621253, 0.35627478, 0.9005482)
-bones/9/rotation = Quaternion(0.571317, -0.030165592, 0.63794684, 0.51547134)
-bones/10/rotation = Quaternion(0.43867067, 0.07112476, 0.03639266, 0.8950893)
+bones/8/rotation = Quaternion(0.21101342, 0.13343272, 0.4249834, 0.8700909)
+bones/9/rotation = Quaternion(0.33146086, -0.14389797, 0.062076528, 0.9303621)
+bones/10/rotation = Quaternion(-0.027991777, 0.467103, 0.033929612, 0.88310826)
 
 [node name="CameraBone" type="BoneAttachment3D" parent="Sectarian/Armature/Skeleton3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5432317, 0)
@@ -60,6 +61,14 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.3
 remote_path = NodePath("../../../../../CameraPivot")
 update_rotation = false
 update_scale = false
+
+[node name="CameraBone2" type="BoneAttachment3D" parent="Sectarian/Armature/Skeleton3D" index="2"]
+transform = Transform3D(-0.7871583, 0.1895878, -0.5868887, -0.60227096, -0.44127566, 0.6652405, -0.13285832, 0.8771157, 0.46153724, -0.25187284, 1.0304636, 0.43599552)
+bone_name = "Arm3.r"
+bone_idx = 10
+
+[node name="Knife" parent="Sectarian/Armature/Skeleton3D/CameraBone2" instance=ExtResource("3_5dc8e")]
+transform = Transform3D(0.27128914, -0.06470298, 0.9655261, -0.10888403, -0.99842405, -0.036313836, 0.96154636, -0.0948048, -0.2765241, -0.0800478, 0.10790661, -0.0378353)
 
 [node name="AnimationPlayer" parent="Sectarian" index="1"]
 playback_auto_capture_transition_type = 4
