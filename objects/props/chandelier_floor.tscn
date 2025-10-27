@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b75plme3dod2o"]
+[gd_scene load_steps=4 format=3 uid="uid://b75plme3dod2o"]
 
 [ext_resource type="PackedScene" uid="uid://bkilx3paglxs7" path="res://assets/levels/models/props/ChandelierFloor.glb" id="1_sks6n"]
+[ext_resource type="PackedScene" uid="uid://djg0psbucw6re" path="res://assets/levels/models/props/ChandelierFloor_Lights.glb" id="2_p5lfr"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sbl8w"]
 height = 2.430664
@@ -12,3 +13,5 @@ height = 2.430664
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.215332, 0)
 shape = SubResource("CylinderShape3D_sbl8w")
+
+[node name="ChandelierFloor_Lights2" parent="." index="2" instance=ExtResource("2_p5lfr")]
