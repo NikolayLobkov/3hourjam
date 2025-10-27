@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcg01n3ptg7j3"]
+[gd_scene load_steps=5 format=3 uid="uid://dcg01n3ptg7j3"]
 
 [ext_resource type="Script" uid="uid://body17xmouij2" path="res://characters/sectarian/sectarian.gd" id="1_cwktq"]
 [ext_resource type="PackedScene" uid="uid://bjupsatumsh3k" path="res://assets/characters/Sectarian.glb" id="2_cwktq"]
+[ext_resource type="PackedScene" uid="uid://bqqcqhkud57c0" path="res://objects/props/knife.tscn" id="3_cma58"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_51igg"]
 
@@ -17,7 +18,14 @@ bones/5/rotation = Quaternion(-8.603744e-09, 1.3360869e-08, -0.0011116189, 0.999
 bones/6/rotation = Quaternion(0.012781748, -4.3686008e-08, -0.028756278, 0.99950475)
 bones/7/rotation = Quaternion(-2.2821007e-07, 2.3384179e-07, 0.86674434, 0.49875274)
 bones/9/rotation = Quaternion(-8.603744e-09, -1.3360869e-08, 0.0011116189, 0.9999994)
-bones/10/rotation = Quaternion(0.012781748, 4.3686008e-08, 0.028756278, 0.99950475)
+
+[node name="Item" type="BoneAttachment3D" parent="Sectarian/Armature/Skeleton3D" index="0"]
+transform = Transform3D(-0.9999997, -4.3360732e-08, 0.0007340049, 1.8689725e-05, -0.99967337, 0.025550755, 0.0007337641, 0.025550764, 0.99967325, -0.2925094, 0.792703, -3.2800124e-08)
+bone_name = "Arm3.r"
+bone_idx = 10
+
+[node name="Knife" parent="Sectarian/Armature/Skeleton3D/Item" instance=ExtResource("3_cma58")]
+transform = Transform3D(0.27128914, -0.06470298, 0.9655261, -0.10888403, -0.99842405, -0.036313836, 0.96154636, -0.0948048, -0.2765241, -0.0800478, 0.10790661, -0.0378353)
 
 [node name="AnimationPlayer" parent="Sectarian" index="1"]
 autoplay = "Idle"
