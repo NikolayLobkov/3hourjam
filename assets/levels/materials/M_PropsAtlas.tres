@@ -3,4 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://drhkij5l0lewn" path="res://assets/levels/textures/T_PropsAtlas.png" id="1_u4b68"]
 
 [resource]
+transparency = 1
 albedo_texture = ExtResource("1_u4b68")
+texture_filter = 0
