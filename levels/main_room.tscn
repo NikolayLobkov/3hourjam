@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dsdafmm8uboj3"]
+[gd_scene load_steps=29 format=3 uid="uid://dcktjw06b4vy0"]
 
 [ext_resource type="PackedScene" uid="uid://hwjqp78r3gpa" path="res://assets/levels/models/room_main.tscn" id="1_xlv32"]
 [ext_resource type="Environment" uid="uid://dgn7yadiyci1m" path="res://levels/environment_0.tres" id="2_bbvwo"]
@@ -18,9 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://b75plme3dod2o" path="res://objects/props/chandelier_floor.tscn" id="17_apy0m"]
 [ext_resource type="PackedScene" uid="uid://ctpecr3l5jl6o" path="res://objects/props/tombstones_row.tscn" id="18_f07vl"]
 [ext_resource type="PackedScene" uid="uid://c5gby5giqb6oo" path="res://objects/props/candle_1.tscn" id="18_m0lr2"]
-[ext_resource type="PackedScene" uid="uid://dpiyc15rkawy5" path="res://objects/props/candles_no_light.tscn" id="18_m2tq3"]
+[ext_resource type="PackedScene" uid="uid://dpiyc15rkawy5" path="res://objects/props/candles_with_light.tscn" id="18_m2tq3"]
 [ext_resource type="PackedScene" uid="uid://thgbjmlcutvd" path="res://objects/props/chalice.tscn" id="19_mqd01"]
-[ext_resource type="PackedScene" uid="uid://baqei342ipmx3" path="res://objects/props/candle_no_light.tscn" id="19_qf884"]
+[ext_resource type="PackedScene" uid="uid://baqei342ipmx3" path="res://objects/props/candle_with_light.tscn" id="19_qf884"]
 [ext_resource type="PackedScene" uid="uid://vj342yewfp8e" path="res://objects/props/chandelier_ceiling.tscn" id="20_m2tq3"]
 [ext_resource type="AudioStream" uid="uid://m0pf7x1u5swf" path="res://assets/Audio/music/MUSIC_ambient.mp3" id="20_mqd01"]
 [ext_resource type="PackedScene" uid="uid://ckd7xdfsjy1ki" path="res://assets/levels/models/Pentagram.glb" id="21_m2tq3"]
@@ -58,13 +58,12 @@ func _on_ritual_ended() -> void:
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0039691925, 0.021327019, -0.028426409)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="RoomMain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9971597, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3122406, 0)
 light_color = Color(1, 0.7276667, 0.57, 1)
-light_energy = 15.492
-light_size = 1.0
+light_energy = 0.477
+light_size = 0.412
 light_specular = 0.0
 light_bake_mode = 1
-shadow_enabled = true
 shadow_opacity = 0.67
 shadow_blur = 1.8
 omni_range = 4096.0
@@ -123,7 +122,7 @@ script = SubResource("GDScript_wn8mm")
 [node name="Props" type="Node3D" parent="."]
 
 [node name="MonolithBig" parent="Props" instance=ExtResource("12_m0lr2")]
-transform = Transform3D(-0.88, 0, -1.5448886e-05, 0, 0.88, 0, 1.5448886e-05, 0, -0.88, -16.402267, 2.407422, 0)
+transform = Transform3D(-0.789, 0, -1.3851331e-05, 0, 0.789, 0, 1.3851331e-05, 0, -0.789, -16.402267, 2.407422, 0)
 
 [node name="Tombstone3" parent="Props" instance=ExtResource("13_mqd01")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -14.997926, 1.9999995, -5.216383)

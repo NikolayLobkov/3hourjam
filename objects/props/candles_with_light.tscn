@@ -28,3 +28,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13957763, 0.16215259, 0.022
 
 [node name="Candle_Light9" parent="." index="8" instance=ExtResource("2_et8kq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07884133, 0.4518429, -0.06475341)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58542085, 0)
+light_color = Color(1, 0.50666666, 0.26, 1)
+light_energy = 1.495
+light_indirect_energy = 3.309
+light_size = 0.155
+omni_range = 1.409
+omni_attenuation = -0.396

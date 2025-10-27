@@ -1,16 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5gby5giqb6oo"]
+[gd_scene load_steps=3 format=3 uid="uid://c5gby5giqb6oo"]
 
 [ext_resource type="PackedScene" uid="uid://bih5qxymf44oi" path="res://assets/levels/models/props/Candle1.glb" id="1_buaip"]
+[ext_resource type="PackedScene" uid="uid://brdnctp3yohrl" path="res://assets/levels/models/props/Candle_Light.glb" id="2_05vjb"]
 
 [node name="Candle1" instance=ExtResource("1_buaip")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51282644, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5627065, 0)
 light_color = Color(1, 0.7276667, 0.57, 1)
-light_energy = 5.0
-light_size = 1.0
+light_energy = 3.021
+light_size = 0.227
 light_specular = 0.0
 light_bake_mode = 1
 shadow_opacity = 0.67
 shadow_blur = 1.8
-omni_range = 15.0
+omni_range = 23.03
+omni_attenuation = 0.794
+
+[node name="Candle_Light2" parent="." index="2" instance=ExtResource("2_05vjb")]
+transform = Transform3D(1.305, 0, 0, 0, 1.305, 0, 0, 0, 1.305, 0, 0.48155713, 0)

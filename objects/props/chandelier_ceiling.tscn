@@ -15,3 +15,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4508846, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.888038, 0)
 
 [node name="ChandelierCeiling_Lights2" parent="." index="4" instance=ExtResource("3_nq3yq")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12505436, 0)
+light_color = Color(1, 0.50666666, 0.26, 1)
+light_energy = 4.299
+light_size = 0.599
+omni_range = 5.445
+omni_attenuation = 0.842

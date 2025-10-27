@@ -15,3 +15,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.215332, 0)
 shape = SubResource("CylinderShape3D_sbl8w")
 
 [node name="ChandelierFloor_Lights2" parent="." index="2" instance=ExtResource("2_p5lfr")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5552702, 0)
+light_color = Color(1, 0.50666666, 0.26, 1)
+light_energy = 4.299
+light_size = 0.599
+omni_range = 5.445
+omni_attenuation = 0.842
