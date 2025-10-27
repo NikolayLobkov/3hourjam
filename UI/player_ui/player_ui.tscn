@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhej5polbmf0b"]
+[gd_scene load_steps=13 format=3 uid="uid://dhej5polbmf0b"]
 
 [ext_resource type="Script" uid="uid://dqgolw1hnvlmu" path="res://UI/player_ui/fail_screen.gd" id="1_i0y3j"]
 [ext_resource type="Script" uid="uid://cc0omlb2c27al" path="res://UI/player_ui/player_ui.gd" id="1_xq2uv"]
@@ -165,6 +165,14 @@ _data = {
 &"fade_out": SubResource("Animation_0lnx5")
 }
 
+[sub_resource type="GDScript" id="GDScript_xq2uv"]
+script/source = "extends Label
+
+
+func _process(_delta: float) -> void:
+	text = 'FPS: %s' % Performance.get_monitor(Performance.TIME_FPS)
+"
+
 [node name="PlayerUI" type="CanvasLayer"]
 script = ExtResource("1_xq2uv")
 
@@ -233,5 +241,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_l3v5y")
 }
 autoplay = "fade_out"
+
+[node name="FPS" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = SubResource("GDScript_xq2uv")
 
 [connection signal="animation_finished" from="Fade/FadeAnimationPlayer" to="Fade" method="_on_fade_animation_player_animation_finished"]
