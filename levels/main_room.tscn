@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dcktjw06b4vy0"]
+[gd_scene load_steps=30 format=3 uid="uid://dcktjw06b4vy0"]
 
 [ext_resource type="PackedScene" uid="uid://hwjqp78r3gpa" path="res://assets/levels/models/room_main.tscn" id="1_xlv32"]
 [ext_resource type="Environment" uid="uid://dgn7yadiyci1m" path="res://levels/environment_0.tres" id="2_bbvwo"]
@@ -48,6 +48,20 @@ func _on_ritual_action_maked(act: String) -> void:
 	text = act
 func _on_ritual_ended() -> void:
 	text = ''
+"
+
+[sub_resource type="GDScript" id="GDScript_qf884"]
+script/source = "extends Camera3D
+
+
+const PATH: String = \"C:/Users/Коля/Desktop/background.png\"
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.keycode == KEY_0 and event.is_pressed():
+			var image := get_viewport().get_texture().get_image()
+			image.save_png(PATH)
 "
 
 [node name="MainRoom" type="Node3D"]
@@ -312,6 +326,11 @@ parameters/looping = false
 
 [node name="Pentagram2" parent="." instance=ExtResource("21_m2tq3")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.011, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 5.290804, 0)
+fov = 68.5
+script = SubResource("GDScript_qf884")
 
 [connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/QTEGame" method="_on_ritual_action_maked"]
 [connection signal="action_maked" from="RitualArea/Ritual" to="RitualArea/ActionLabel" method="_on_ritual_action_maked"]

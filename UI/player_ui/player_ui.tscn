@@ -171,6 +171,12 @@ script/source = "extends Label
 
 func _process(_delta: float) -> void:
 	text = 'FPS: %s' % Performance.get_monitor(Performance.TIME_FPS)
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.keycode == KEY_F3 and event.is_pressed():
+			visible = not visible
 "
 
 [node name="PlayerUI" type="CanvasLayer"]
@@ -243,8 +249,17 @@ libraries = {
 autoplay = "fade_out"
 
 [node name="FPS" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -49.0
+offset_top = 8.0
+offset_right = -9.0
+offset_bottom = 31.0
+grow_horizontal = 0
+horizontal_alignment = 2
+vertical_alignment = 1
 script = SubResource("GDScript_xq2uv")
 
 [connection signal="animation_finished" from="Fade/FadeAnimationPlayer" to="Fade" method="_on_fade_animation_player_animation_finished"]
