@@ -6,16 +6,12 @@
 [node name="Candle1" instance=ExtResource("1_buaip")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5627065, 0)
-light_color = Color(1, 0.7276667, 0.57, 1)
-light_energy = 3.021
-light_size = 0.227
-light_specular = 0.0
-light_bake_mode = 1
-shadow_opacity = 0.67
-shadow_blur = 1.8
-omni_range = 23.03
-omni_attenuation = 0.794
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5552702, 0)
+light_color = Color(1, 0.50666666, 0.26, 1)
+light_energy = 4.299
+light_size = 0.599
+omni_range = 4.43
+omni_attenuation = 0.842
 
 [node name="Candle_Light2" parent="." index="2" instance=ExtResource("2_05vjb")]
 transform = Transform3D(1.305, 0, 0, 0, 1.305, 0, 0, 0, 1.305, 0, 0.48155713, 0)

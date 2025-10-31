@@ -10,5 +10,5 @@ background_mode = 1
 sky = SubResource("Sky_lkjt4")
 fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
-fog_density = 0.2
+fog_density = 0.1
 adjustment_enabled = true

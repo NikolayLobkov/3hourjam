@@ -2,7 +2,7 @@ class_name Player extends Character
 
 
 const CAMERA_SENSITIVITY: float = 0.004
-const CAMERA_SMOOTH: float = 25.0
+const CAMERA_SMOOTH: float = 20.0
 
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var animation_player: AnimationPlayer = $Sectarian/AnimationPlayer

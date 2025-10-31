@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://06yuwt2lfnj0"]
+[gd_scene load_steps=7 format=3 uid="uid://06yuwt2lfnj0"]
 
 [ext_resource type="Script" uid="uid://b52u3yxs4qx6p" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="Texture2D" uid="uid://cqw5godvye4fe" path="res://main_menu/background.png" id="2_3f7m4"]
 [ext_resource type="Script" uid="uid://w1r5ytkxyrfd" path="res://main_menu/menus/main.gd" id="2_d3a7t"]
 [ext_resource type="PackedScene" uid="uid://c3cqpnvbja3n0" path="res://global/scene_loader.tscn" id="3_3shxk"]
 [ext_resource type="Script" uid="uid://dduxv666h6bd7" path="res://main_menu/menus/settings.gd" id="4_bws42"]
@@ -18,6 +19,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3f7m4")
+expand_mode = 1
+
 [node name="TabContainer" type="TabContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -26,11 +37,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_1h4yd")
-current_tab = 0
+current_tab = 1
 clip_tabs = false
 tabs_visible = false
 
 [node name="Main" type="Control" parent="Control/TabContainer" node_paths=PackedStringArray("settings")]
+visible = false
 layout_mode = 2
 script = ExtResource("2_d3a7t")
 settings = NodePath("../Settings")
@@ -49,7 +61,7 @@ vertical_alignment = 1
 [node name="LevelLoader" parent="Control/TabContainer/Main" instance=ExtResource("3_3shxk")]
 scene_path = "res://levels/main_room.tscn"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Main"]
+[node name="ButtonContainer" type="VBoxContainer" parent="Control/TabContainer/Main"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -64,24 +76,32 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Start" type="Button" parent="Control/TabContainer/Main/VBoxContainer"]
+[node name="Start" type="Button" parent="Control/TabContainer/Main/ButtonContainer"]
 layout_mode = 2
 text = "BEGIN_GAME"
 
-[node name="Settings" type="Button" parent="Control/TabContainer/Main/VBoxContainer"]
+[node name="Settings" type="Button" parent="Control/TabContainer/Main/ButtonContainer"]
 layout_mode = 2
 text = "SETTINGS"
 
-[node name="Quit" type="Button" parent="Control/TabContainer/Main/VBoxContainer"]
+[node name="Quit" type="Button" parent="Control/TabContainer/Main/ButtonContainer"]
 layout_mode = 2
 text = "QUIT_GAME"
 
 [node name="Settings" type="Control" parent="Control/TabContainer" node_paths=PackedStringArray("previous_tab")]
-visible = false
 layout_mode = 2
 script = ExtResource("4_bws42")
 previous_tab = NodePath("../Main")
 metadata/_tab_index = 1
+
+[node name="Black" type="ColorRect" parent="Control/TabContainer/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.56078434)
 
 [node name="Label" type="Label" parent="Control/TabContainer/Settings"]
 layout_mode = 1
@@ -93,7 +113,7 @@ text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Settings"]
+[node name="ButtonContainer" type="VBoxContainer" parent="Control/TabContainer/Settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -108,11 +128,14 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Back" type="Button" parent="Control/TabContainer/Settings/VBoxContainer"]
+[node name="Back" type="Button" parent="Control/TabContainer/Settings/ButtonContainer"]
 layout_mode = 2
 text = "BACK"
 
-[connection signal="pressed" from="Control/TabContainer/Main/VBoxContainer/Start" to="Control/TabContainer/Main" method="_on_start_pressed"]
-[connection signal="pressed" from="Control/TabContainer/Main/VBoxContainer/Settings" to="Control/TabContainer/Main" method="_on_settings_pressed"]
-[connection signal="pressed" from="Control/TabContainer/Main/VBoxContainer/Quit" to="Control/TabContainer/Main" method="_on_quit_pressed"]
-[connection signal="pressed" from="Control/TabContainer/Settings/VBoxContainer/Back" to="Control/TabContainer/Settings" method="_on_back_pressed"]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[connection signal="pressed" from="Control/TabContainer/Main/ButtonContainer/Start" to="Control/TabContainer/Main" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/TabContainer/Main/ButtonContainer/Settings" to="Control/TabContainer/Main" method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/TabContainer/Main/ButtonContainer/Quit" to="Control/TabContainer/Main" method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/TabContainer/Settings/ButtonContainer/Back" to="Control/TabContainer/Settings" method="_on_back_pressed"]
