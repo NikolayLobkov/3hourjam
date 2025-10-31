@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://thgbjmlcutvd" path="res://objects/props/chalice.tscn" id="19_mqd01"]
 [ext_resource type="PackedScene" uid="uid://baqei342ipmx3" path="res://objects/props/candle_with_light.tscn" id="19_qf884"]
 [ext_resource type="PackedScene" uid="uid://vj342yewfp8e" path="res://objects/props/chandelier_ceiling.tscn" id="20_m2tq3"]
-[ext_resource type="AudioStream" uid="uid://m0pf7x1u5swf" path="res://assets/Audio/music/MUSIC_ambient.mp3" id="20_mqd01"]
+[ext_resource type="AudioStream" uid="uid://m0pf7x1u5swf" path="res://assets/audio/music/MUSIC_ambient.mp3" id="20_mqd01"]
 [ext_resource type="PackedScene" uid="uid://ckd7xdfsjy1ki" path="res://assets/levels/models/Pentagram.glb" id="21_m2tq3"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dt74c"]
@@ -133,10 +133,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5687656, 0)
 billboard = 1
 script = SubResource("GDScript_wn8mm")
 
+[node name="Sectarians" type="Node3D" parent="."]
+script = ExtResource("14_mwfpk")
+
+[node name="Sectarian" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.4038577)
+
+[node name="Sectarian2" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(0.9053614, 0, -0.42464194, 0, 1, 0, 0.42464194, 0, 0.9053614, 1.5418051, 0, -2.7383287)
+
+[node name="Sectarian3" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(0.47367328, 0, -0.8807007, 0, 1, 0, 0.8807007, 0, 0.47367328, 2.6254048, 2.3841858e-07, -1.4867542)
+
+[node name="Sectarian4" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(-0.06918193, 0, -0.99760413, 0, 1, 0, 0.99760413, 0, -0.06918193, 3.213358, 0, -0.088382006)
+
+[node name="Sectarian5" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(-0.58283234, 0, -0.81259245, 0, 1, 0, 0.81259245, 0, -0.58283234, 2.7661064, 2.3841858e-07, 1.3302068)
+
+[node name="Sectarian6" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(-0.91728264, 0, -0.39823678, 0, 1, 0, 0.39823678, 0, -0.91728264, 1.95055, 2.3841858e-07, 2.6466649)
+
+[node name="Sectarian7" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(-0.91189826, 0, 0.41041657, 0, 1, 0, -0.41041657, 0, -0.91189826, -2.0509045, 0, 2.853975)
+
+[node name="Sectarian8" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(-0.41943622, 0, 0.907785, 0, 1, 0, -0.907785, 0, -0.41943622, -3.0989168, 0, 1.4607284)
+
+[node name="Sectarian9" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(-0.059985727, 0, 0.9981994, 0, 1, 0, -0.9981994, 0, -0.059985727, -3.3260956, 0, -0.26623476)
+
+[node name="Sectarian10" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(0.49860895, 0, 0.8668272, 0, 1, 0, -0.8668272, 0, 0.49860895, -2.9269767, 2.3841858e-07, -1.9731631)
+
+[node name="Sectarian11" parent="Sectarians" instance=ExtResource("13_mwfpk")]
+transform = Transform3D(0.92921656, 0, 0.36953586, 0, 1, 0, -0.36953586, 0, 0.92921656, -1.7181884, 2.3841858e-07, -3.2165768)
+
 [node name="Props" type="Node3D" parent="."]
 
 [node name="MonolithBig" parent="Props" instance=ExtResource("12_m0lr2")]
-transform = Transform3D(-0.789, 0, -1.3851331e-05, 0, 0.789, 0, 1.3851331e-05, 0, -0.789, -16.402267, 2.407422, 0)
+transform = Transform3D(-0.789, 0, -1.3851331e-05, 0, 0.789, 0, 1.3851331e-05, 0, -0.789, -16.402267, 2.0003824, 0)
 
 [node name="Tombstone3" parent="Props" instance=ExtResource("13_mqd01")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -14.997926, 1.9999995, -5.216383)
@@ -281,42 +317,6 @@ transform = Transform3D(1.36, 0, 0, 0, 1.36, 0, 0, 0, 1.36, 14, 9, 6)
 
 [node name="СhandelierCeiling8" parent="Props/Ceiling" instance=ExtResource("20_m2tq3")]
 transform = Transform3D(1.36, 0, 0, 0, 1.36, 0, 0, 0, 1.36, 23, 9, 6)
-
-[node name="Sectarians" type="Node3D" parent="."]
-script = ExtResource("14_mwfpk")
-
-[node name="Sectarian" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.4038577)
-
-[node name="Sectarian2" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(0.9053614, 0, -0.42464194, 0, 1, 0, 0.42464194, 0, 0.9053614, 1.5418051, 0, -2.7383287)
-
-[node name="Sectarian3" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(0.47367328, 0, -0.8807007, 0, 1, 0, 0.8807007, 0, 0.47367328, 2.6254048, 2.3841858e-07, -1.4867542)
-
-[node name="Sectarian4" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(-0.06918193, 0, -0.99760413, 0, 1, 0, 0.99760413, 0, -0.06918193, 3.213358, 0, -0.088382006)
-
-[node name="Sectarian5" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(-0.58283234, 0, -0.81259245, 0, 1, 0, 0.81259245, 0, -0.58283234, 2.7661064, 2.3841858e-07, 1.3302068)
-
-[node name="Sectarian6" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(-0.91728264, 0, -0.39823678, 0, 1, 0, 0.39823678, 0, -0.91728264, 1.95055, 2.3841858e-07, 2.6466649)
-
-[node name="Sectarian7" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(-0.91189826, 0, 0.41041657, 0, 1, 0, -0.41041657, 0, -0.91189826, -2.0509045, 0, 2.853975)
-
-[node name="Sectarian8" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(-0.41943622, 0, 0.907785, 0, 1, 0, -0.907785, 0, -0.41943622, -3.0989168, 0, 1.4607284)
-
-[node name="Sectarian9" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(-0.059985727, 0, 0.9981994, 0, 1, 0, -0.9981994, 0, -0.059985727, -3.3260956, 0, -0.26623476)
-
-[node name="Sectarian10" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(0.49860895, 0, 0.8668272, 0, 1, 0, -0.8668272, 0, 0.49860895, -2.9269767, 2.3841858e-07, -1.9731631)
-
-[node name="Sectarian11" parent="Sectarians" instance=ExtResource("13_mwfpk")]
-transform = Transform3D(0.92921656, 0, 0.36953586, 0, 1, 0, -0.36953586, 0, 0.92921656, -1.7181884, 2.3841858e-07, -3.2165768)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_mqd01")

@@ -2,14 +2,14 @@ class_name SceneLoader extends Node
 
 
 @export_file_path('*.tscn') var scene_path: String
-@export var autoload: bool = true
+@export var preload_scene: bool = true
 
 var loaded: bool = false
 var progress: Array
 
 
 func _ready() -> void:
-	if autoload:
+	if preload_scene:
 		begin_loading()
 
 func begin_loading() -> void:

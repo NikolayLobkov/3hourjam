@@ -19,6 +19,7 @@ var look_rotation: Vector3 = Vector3.ZERO
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	GameManager.mouse_captured = true
 	$Sectarian/Armature/Skeleton3D/CameraBone2/Knife.visible = true
 	GameManager.failed = false
 

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cvbm7kkq61jd7"
-path="res://.godot/imported/sound_choir.ogg-65e07889a6f14058796908f7757e1208.oggvorbisstr"
+path="res://.godot/imported/sound_choir.ogg-ea83f8b9376d0510d055accebcd67a17.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Audio/sounds/sound_choir.ogg"
-dest_files=["res://.godot/imported/sound_choir.ogg-65e07889a6f14058796908f7757e1208.oggvorbisstr"]
+source_file="res://assets/audio/sounds/sound_choir.ogg"
+dest_files=["res://.godot/imported/sound_choir.ogg-ea83f8b9376d0510d055accebcd67a17.oggvorbisstr"]
 
 [params]
 

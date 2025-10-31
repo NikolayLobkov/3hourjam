@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ckv1wu3rdjru2"
-path="res://.godot/imported/sound_player_sacrifice.mp3-634dd0aa605bb1b23562f4223cdbd859.mp3str"
+path="res://.godot/imported/sound_player_sacrifice.mp3-88dde9912e7db0e387d35c36f73cefc8.mp3str"
 
 [deps]
 
-source_file="res://assets/Audio/sounds/sound_player_sacrifice.mp3"
-dest_files=["res://.godot/imported/sound_player_sacrifice.mp3-634dd0aa605bb1b23562f4223cdbd859.mp3str"]
+source_file="res://assets/audio/sounds/sound_player_sacrifice.mp3"
+dest_files=["res://.godot/imported/sound_player_sacrifice.mp3-88dde9912e7db0e387d35c36f73cefc8.mp3str"]
 
 [params]
 

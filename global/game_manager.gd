@@ -31,8 +31,17 @@ func _on_restart_scene() -> void:
 
 
 var fullscreen: bool = true
+var mouse_captured: bool = false
 
 func _input(event: InputEvent) -> void:
 	if event.is_action('fullscreen') and event.is_pressed():
 		fullscreen = not fullscreen
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED)
+
+func _notification(what: int) -> void:
+	match what:
+		NOTIFICATION_WM_WINDOW_FOCUS_IN:
+			if mouse_captured:
+				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		NOTIFICATION_WM_WINDOW_FOCUS_OUT:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

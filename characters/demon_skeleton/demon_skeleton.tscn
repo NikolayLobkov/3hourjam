@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c43i3bxckgvoc" path="res://characters/demon.gd" id="1_qhnmn"]
 [ext_resource type="PackedScene" uid="uid://bpl5msfi0kbit" path="res://assets/characters/DemonSkelet.glb" id="2_qhnmn"]
-[ext_resource type="AudioStream" uid="uid://dsx1i6ndyl8qu" path="res://assets/Audio/sounds/sound_bad_ending.mp3" id="3_jv4al"]
-[ext_resource type="AudioStream" uid="uid://boourkikvq1s0" path="res://assets/Audio/sounds/sound_good_ending.ogg" id="4_dr5pg"]
+[ext_resource type="AudioStream" uid="uid://dsx1i6ndyl8qu" path="res://assets/audio/sounds/sound_bad_ending.mp3" id="3_jv4al"]
+[ext_resource type="AudioStream" uid="uid://boourkikvq1s0" path="res://assets/audio/sounds/sound_good_ending.ogg" id="4_dr5pg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhnmn"]
 size = Vector3(4.535, 9, 2.519379)

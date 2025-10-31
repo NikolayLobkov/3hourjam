@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bjupsatumsh3k" path="res://assets/characters/Sectarian.glb" id="2_exd8k"]
 [ext_resource type="PackedScene" uid="uid://dhej5polbmf0b" path="res://UI/player_ui/player_ui.tscn" id="2_xxgcw"]
 [ext_resource type="PackedScene" uid="uid://bqqcqhkud57c0" path="res://objects/props/knife.tscn" id="3_5dc8e"]
-[ext_resource type="AudioStream" uid="uid://ckv1wu3rdjru2" path="res://assets/Audio/sounds/sound_player_sacrifice.mp3" id="5_ixbpm"]
-[ext_resource type="AudioStream" uid="uid://de4vml8vftak4" path="res://assets/Audio/sounds/sounds_claping.wav" id="6_c6leb"]
+[ext_resource type="AudioStream" uid="uid://ckv1wu3rdjru2" path="res://assets/audio/sounds/sound_player_sacrifice.mp3" id="5_ixbpm"]
+[ext_resource type="AudioStream" uid="uid://de4vml8vftak4" path="res://assets/audio/sounds/sounds_claping.wav" id="6_c6leb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 

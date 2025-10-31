@@ -92,6 +92,10 @@ fullscreen={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/localization/general.en.translation", "res://assets/localization/general.ru.translation")
+
 [physics]
 
 common/physics_interpolation=true

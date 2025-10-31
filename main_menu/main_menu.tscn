@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://06yuwt2lfnj0"]
+[gd_scene load_steps=6 format=3 uid="uid://06yuwt2lfnj0"]
 
 [ext_resource type="Script" uid="uid://b52u3yxs4qx6p" path="res://main_menu/main_menu.gd" id="1_oa53l"]
 [ext_resource type="Script" uid="uid://w1r5ytkxyrfd" path="res://main_menu/menus/main.gd" id="2_d3a7t"]
 [ext_resource type="PackedScene" uid="uid://c3cqpnvbja3n0" path="res://global/scene_loader.tscn" id="3_3shxk"]
+[ext_resource type="Script" uid="uid://dduxv666h6bd7" path="res://main_menu/menus/settings.gd" id="4_bws42"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1h4yd"]
 
@@ -29,10 +30,21 @@ current_tab = 0
 clip_tabs = false
 tabs_visible = false
 
-[node name="Main" type="Control" parent="Control/TabContainer"]
+[node name="Main" type="Control" parent="Control/TabContainer" node_paths=PackedStringArray("settings")]
 layout_mode = 2
 script = ExtResource("2_d3a7t")
+settings = NodePath("../Settings")
 metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="Control/TabContainer/Main"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 101.0
+grow_horizontal = 2
+text = "NEWBIE_IN_SATANISM"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="LevelLoader" parent="Control/TabContainer/Main" instance=ExtResource("3_3shxk")]
 scene_path = "res://levels/main_room.tscn"
@@ -54,11 +66,53 @@ alignment = 1
 
 [node name="Start" type="Button" parent="Control/TabContainer/Main/VBoxContainer"]
 layout_mode = 2
-text = "Begin"
+text = "BEGIN_GAME"
+
+[node name="Settings" type="Button" parent="Control/TabContainer/Main/VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
 
 [node name="Quit" type="Button" parent="Control/TabContainer/Main/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "QUIT_GAME"
+
+[node name="Settings" type="Control" parent="Control/TabContainer" node_paths=PackedStringArray("previous_tab")]
+visible = false
+layout_mode = 2
+script = ExtResource("4_bws42")
+previous_tab = NodePath("../Main")
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="Control/TabContainer/Settings"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 101.0
+grow_horizontal = 2
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -157.5
+offset_right = 113.0
+offset_bottom = 157.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Back" type="Button" parent="Control/TabContainer/Settings/VBoxContainer"]
+layout_mode = 2
+text = "BACK"
 
 [connection signal="pressed" from="Control/TabContainer/Main/VBoxContainer/Start" to="Control/TabContainer/Main" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/TabContainer/Main/VBoxContainer/Settings" to="Control/TabContainer/Main" method="_on_settings_pressed"]
 [connection signal="pressed" from="Control/TabContainer/Main/VBoxContainer/Quit" to="Control/TabContainer/Main" method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/TabContainer/Settings/VBoxContainer/Back" to="Control/TabContainer/Settings" method="_on_back_pressed"]
